@@ -14,6 +14,7 @@
 		118265651E9ACAB500AC9491 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 118265641E9ACAB500AC9491 /* Assets.xcassets */; };
 		118265681E9ACAB500AC9491 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 118265661E9ACAB500AC9491 /* LaunchScreen.storyboard */; };
 		118265731E9ACAB500AC9491 /* nyu_afrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 118265721E9ACAB500AC9491 /* nyu_afrTests.m */; };
+		1182657E1E9AD21700AC9491 /* NYUAFR2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1182657D1E9AD21700AC9491 /* NYUAFR2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		1182656E1E9ACAB500AC9491 /* nyu-afrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "nyu-afrTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		118265721E9ACAB500AC9491 /* nyu_afrTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = nyu_afrTests.m; sourceTree = "<group>"; };
 		118265741E9ACAB500AC9491 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1182657D1E9AD21700AC9491 /* NYUAFR2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NYUAFR2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				1182655F1E9ACAB500AC9491 /* ViewController.m */,
 				118265611E9ACAB500AC9491 /* Main.storyboard */,
 				118265641E9ACAB500AC9491 /* Assets.xcassets */,
+				1182657D1E9AD21700AC9491 /* NYUAFR2.png */,
 				118265661E9ACAB500AC9491 /* LaunchScreen.storyboard */,
 				118265691E9ACAB500AC9491 /* Info.plist */,
 				118265581E9ACAB500AC9491 /* Supporting Files */,
@@ -194,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				118265681E9ACAB500AC9491 /* LaunchScreen.storyboard in Resources */,
+				1182657E1E9AD21700AC9491 /* NYUAFR2.png in Resources */,
 				118265651E9ACAB500AC9491 /* Assets.xcassets in Resources */,
 				118265631E9ACAB500AC9491 /* Main.storyboard in Resources */,
 			);
