@@ -1,2 +1,15 @@
-# nyu-afr
-New York University Amazing Freshman Race
+# NYU AFR: A Better Way to Learn Campus Navigation
+
+NYU Amazing Freshman Race (NYU AFR) is an iPhone game that provides a fun way for NYU freshman students to learn campus navigation. Inspired by the popular American reality show “The Amazing Race” and the world phenomenon mobile game “Pokemon Go”, this location based app will engage students to participate in a real physical race to various places in the NYU main campus.
+
+## Gameplay
+
+Within every game, the students will have to race to a certain set of places chosen randomly by the app. The app will guide students to go to each place by giving them a quest to solve. To solve the quest, students will have to guess the correct place given three things. First, a clue of the place which can be a short description, a characteristic feature, or a fun fact that is unique for each place. Second, a map with three pins which in one of them points to the correct place. Third, ten name of possible places they can go to. The fun part of the game is that the students will have to literally “go” to the place in order to make a guess, since the app will check the device’s location and ask to upload a selfie of proof every time a student make a guess. So, they will have the real experience (and not just “made up realistic” experience) of exploring their new campus and also keep a selfie proof that they can share with their friends later. In addition, since every clue is a unique information about the place, the students will have the chance to learn more about the places they visit and probably interact with the NYU community while trying to figure out which place that the clue represents. 
+
+## Additional Features
+
+In order to motivate students, NYU AFR provides some socially related features. First, students will be given the honor to share their "selfies of proof" to their Facebook and Instagram. So, they can show off their achievements and get motivated to go for more. Second, upon completion of various quests, students will be awarded different badges to collect. All places that students can find are divided in categories. Every time a student discovers a new place (if it’s correct) then the student will get points that will be accumulated to earn a badge for that place’s category. Badge is a form of trophy that can be upgraded when there’s enough points. For example, students will get their “Bronze Dining Hall” badge when they discover their first dining hall. Then, they will get their silver dining hall badge upon discovery of their third dining hall. Students can also show off their badges by sharing it on Facebook and Instagram.
+
+## Future Development Plan
+
+For now, students can only play as a single player. If they want to play the game as a team, their progress can only count for one account that they use to play. However, in the future development, there will be a multiplayer feature. Students can use this feature to compete with other player, cooperatively race together as a team, or race competitively with other teams to reach all the places as fast as possible.
