@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="UzC-h0-gIf">
-                                <rect key="frame" x="16" y="70" width="343" height="286"/>
+                                <rect key="frame" x="16" y="70" width="343" height="314.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NYUAFR2.png" translatesAutoresizingMaskIntoConstraints="NO" id="ygg-TQ-2Uq">
                                         <rect key="frame" x="91.5" y="0.0" width="160" height="160"/>
@@ -32,12 +32,12 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YS0-X1-IJ1">
-                                        <rect key="frame" x="0.0" y="180" width="343" height="106"/>
+                                        <rect key="frame" x="0.0" y="180" width="343" height="134.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="00G-ap-cgc">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="106"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="134.5"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LId-Y2-bQ6">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LId-Y2-bQ6">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="343" id="kDz-MU-ODT"/>
@@ -65,9 +65,15 @@
                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                         <connections>
-                                                            <segue destination="UDp-AB-slN" kind="presentation" id="Rsq-6c-LJ3"/>
+                                                            <action selector="loginClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pNJ-cQ-sjg"/>
                                                         </connections>
                                                     </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="a" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c44-pT-9wG">
+                                                        <rect key="frame" x="0.0" y="114" width="343" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -95,15 +101,21 @@
                             <constraint firstItem="VBu-r0-gd0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="p8r-Ui-BZe"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailAddressTF" destination="LId-Y2-bQ6" id="Y2h-81-lZk"/>
+                        <outlet property="errorLabel" destination="c44-pT-9wG" id="DCN-ix-GWe"/>
+                        <outlet property="loginBtn" destination="AdX-om-nw5" id="giO-vU-Lkw"/>
+                        <outlet property="passwordTF" destination="crz-FB-pi2" id="C22-JE-XTk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
         </scene>
-        <!--View Controller-->
+        <!--Signup View Controller-->
         <scene sceneID="HJA-U8-fNR">
             <objects>
-                <viewController id="SHh-kj-S6q" sceneMemberID="viewController">
+                <viewController id="SHh-kj-S6q" customClass="SignupViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pLC-gU-oua"/>
                         <viewControllerLayoutGuide type="bottom" id="xd9-uj-4BE"/>
@@ -113,7 +125,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="RIl-sW-y8W">
-                                <rect key="frame" x="16" y="170" width="343" height="216.5"/>
+                                <rect key="frame" x="16" y="170" width="343" height="247"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CREATE ACCOUNT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uog-Mk-G6G">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
@@ -125,15 +137,15 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IB6-O7-Tfs">
-                                        <rect key="frame" x="0.0" y="70.5" width="343" height="146"/>
+                                        <rect key="frame" x="0.0" y="70.5" width="343" height="176.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Sy0-2w-a8N">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="106"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OK0-d2-7cn">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OS4-LA-0Td">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="343" id="cJ1-0V-6uh"/>
+                                                            <constraint firstAttribute="width" constant="343" id="RfQ-y4-dzN"/>
                                                         </constraints>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -169,9 +181,15 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="UDp-AB-slN" kind="presentation" id="Eus-Ut-QVh"/>
+                                                    <action selector="signupOnClick:" destination="SHh-kj-S6q" eventType="touchUpInside" id="0gi-uk-f9N"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="a" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lw4-jU-Y2Q">
+                                                <rect key="frame" x="0.0" y="156" width="343" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -197,6 +215,12 @@
                             <constraint firstItem="xd9-uj-4BE" firstAttribute="top" secondItem="UzV-vp-YUB" secondAttribute="bottom" constant="21" id="xBV-an-sqK"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailAddressTF" destination="OS4-LA-0Td" id="HhZ-Pj-VgP"/>
+                        <outlet property="errorLabel" destination="lw4-jU-Y2Q" id="auW-Rk-Kyc"/>
+                        <outlet property="passwordTF" destination="96X-Ho-k61" id="LLO-vU-UUx"/>
+                        <outlet property="verifyPasswordTF" destination="cnO-kW-WTt" id="Aip-a9-5m4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ctc-mj-TMW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -275,7 +299,7 @@
         <!--Quest-->
         <scene sceneID="tKr-IX-6fD">
             <objects>
-                <viewController id="blf-NF-CUe" sceneMemberID="viewController">
+                <viewController id="blf-NF-CUe" customClass="QuestViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Agr-rZ-d6p"/>
                         <viewControllerLayoutGuide type="bottom" id="Ufg-xd-Erc"/>
@@ -329,7 +353,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="tA6-IE-jyc">
             <objects>
-                <tabBarController id="UDp-AB-slN" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarController" id="UDp-AB-slN" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="zNi-8e-wZP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -350,7 +374,4 @@
     <resources>
         <image name="NYUAFR2.png" width="1024" height="1024"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Eus-Ut-QVh"/>
-    </inferredMetricsTieBreakers>
 </document>
