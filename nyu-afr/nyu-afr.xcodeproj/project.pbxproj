@@ -15,6 +15,10 @@
 		118265681E9ACAB500AC9491 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 118265661E9ACAB500AC9491 /* LaunchScreen.storyboard */; };
 		118265731E9ACAB500AC9491 /* nyu_afrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 118265721E9ACAB500AC9491 /* nyu_afrTests.m */; };
 		1182657E1E9AD21700AC9491 /* NYUAFR2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1182657D1E9AD21700AC9491 /* NYUAFR2.png */; };
+		11D77E161E9D931E00A37459 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11D77E151E9D931E00A37459 /* GoogleService-Info.plist */; };
+		11D77E191E9D99F900A37459 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D77E181E9D99F900A37459 /* Model.m */; };
+		4C97ED99DACD99890A4E1F77 /* libPods-nyu-afr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBE10562CCC80114D3AC6D3 /* libPods-nyu-afr.a */; };
+		A38208C5F347AC68CBA8A69A /* libPods-nyu-afrTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 434AE8B18237FC9630396911 /* libPods-nyu-afrTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +46,15 @@
 		118265721E9ACAB500AC9491 /* nyu_afrTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = nyu_afrTests.m; sourceTree = "<group>"; };
 		118265741E9ACAB500AC9491 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1182657D1E9AD21700AC9491 /* NYUAFR2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NYUAFR2.png; sourceTree = "<group>"; };
+		11D77E151E9D931E00A37459 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		11D77E171E9D99F900A37459 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		11D77E181E9D99F900A37459 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
+		434AE8B18237FC9630396911 /* libPods-nyu-afrTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-nyu-afrTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		63133D087CA223413603467A /* Pods-nyu-afrTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyu-afrTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nyu-afrTests/Pods-nyu-afrTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8DC466BAD5BBB0AD3F40C7CB /* Pods-nyu-afr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyu-afr.release.xcconfig"; path = "Pods/Target Support Files/Pods-nyu-afr/Pods-nyu-afr.release.xcconfig"; sourceTree = "<group>"; };
+		CB78F2E28D1984777076E879 /* Pods-nyu-afrTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyu-afrTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-nyu-afrTests/Pods-nyu-afrTests.release.xcconfig"; sourceTree = "<group>"; };
+		CD2937EB9C26C54CF66D5DE5 /* Pods-nyu-afr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyu-afr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nyu-afr/Pods-nyu-afr.debug.xcconfig"; sourceTree = "<group>"; };
+		DBBE10562CCC80114D3AC6D3 /* libPods-nyu-afr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-nyu-afr.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C97ED99DACD99890A4E1F77 /* libPods-nyu-afr.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A38208C5F347AC68CBA8A69A /* libPods-nyu-afrTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +83,8 @@
 				118265571E9ACAB500AC9491 /* nyu-afr */,
 				118265711E9ACAB500AC9491 /* nyu-afrTests */,
 				118265561E9ACAB500AC9491 /* Products */,
+				E72D4903865708EE782FCCE2 /* Pods */,
+				20774AE1C93A41B7A84E1323 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,6 +102,8 @@
 			children = (
 				1182655B1E9ACAB500AC9491 /* AppDelegate.h */,
 				1182655C1E9ACAB500AC9491 /* AppDelegate.m */,
+				11D77E171E9D99F900A37459 /* Model.h */,
+				11D77E181E9D99F900A37459 /* Model.m */,
 				1182655E1E9ACAB500AC9491 /* ViewController.h */,
 				1182655F1E9ACAB500AC9491 /* ViewController.m */,
 				118265611E9ACAB500AC9491 /* Main.storyboard */,
@@ -92,6 +111,7 @@
 				1182657D1E9AD21700AC9491 /* NYUAFR2.png */,
 				118265661E9ACAB500AC9491 /* LaunchScreen.storyboard */,
 				118265691E9ACAB500AC9491 /* Info.plist */,
+				11D77E151E9D931E00A37459 /* GoogleService-Info.plist */,
 				118265581E9ACAB500AC9491 /* Supporting Files */,
 			);
 			path = "nyu-afr";
@@ -114,6 +134,26 @@
 			path = "nyu-afrTests";
 			sourceTree = "<group>";
 		};
+		20774AE1C93A41B7A84E1323 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DBBE10562CCC80114D3AC6D3 /* libPods-nyu-afr.a */,
+				434AE8B18237FC9630396911 /* libPods-nyu-afrTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E72D4903865708EE782FCCE2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CD2937EB9C26C54CF66D5DE5 /* Pods-nyu-afr.debug.xcconfig */,
+				8DC466BAD5BBB0AD3F40C7CB /* Pods-nyu-afr.release.xcconfig */,
+				63133D087CA223413603467A /* Pods-nyu-afrTests.debug.xcconfig */,
+				CB78F2E28D1984777076E879 /* Pods-nyu-afrTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -121,9 +161,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 118265771E9ACAB500AC9491 /* Build configuration list for PBXNativeTarget "nyu-afr" */;
 			buildPhases = (
+				03E3A385FE19609DAF402F6E /* [CP] Check Pods Manifest.lock */,
 				118265511E9ACAB500AC9491 /* Sources */,
 				118265521E9ACAB500AC9491 /* Frameworks */,
 				118265531E9ACAB500AC9491 /* Resources */,
+				0EB43B927D2D3959904360E2 /* [CP] Embed Pods Frameworks */,
+				ACA73DD00B6583BC0636A6A4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -138,9 +181,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1182657A1E9ACAB500AC9491 /* Build configuration list for PBXNativeTarget "nyu-afrTests" */;
 			buildPhases = (
+				23D068051079A83DD7101143 /* [CP] Check Pods Manifest.lock */,
 				1182656A1E9ACAB500AC9491 /* Sources */,
 				1182656B1E9ACAB500AC9491 /* Frameworks */,
 				1182656C1E9ACAB500AC9491 /* Resources */,
+				E54E963B72DB25EBD77066B3 /* [CP] Embed Pods Frameworks */,
+				895E266C609EDE07EED916B2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -198,6 +244,7 @@
 			files = (
 				118265681E9ACAB500AC9491 /* LaunchScreen.storyboard in Resources */,
 				1182657E1E9AD21700AC9491 /* NYUAFR2.png in Resources */,
+				11D77E161E9D931E00A37459 /* GoogleService-Info.plist in Resources */,
 				118265651E9ACAB500AC9491 /* Assets.xcassets in Resources */,
 				118265631E9ACAB500AC9491 /* Main.storyboard in Resources */,
 			);
@@ -212,6 +259,99 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		03E3A385FE19609DAF402F6E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		0EB43B927D2D3959904360E2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-nyu-afr/Pods-nyu-afr-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		23D068051079A83DD7101143 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		895E266C609EDE07EED916B2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-nyu-afrTests/Pods-nyu-afrTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ACA73DD00B6583BC0636A6A4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-nyu-afr/Pods-nyu-afr-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E54E963B72DB25EBD77066B3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-nyu-afrTests/Pods-nyu-afrTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		118265511E9ACAB500AC9491 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -220,6 +360,7 @@
 				118265601E9ACAB500AC9491 /* ViewController.m in Sources */,
 				1182655D1E9ACAB500AC9491 /* AppDelegate.m in Sources */,
 				1182655A1E9ACAB500AC9491 /* main.m in Sources */,
+				11D77E191E9D99F900A37459 /* Model.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +496,7 @@
 		};
 		118265781E9ACAB500AC9491 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD2937EB9C26C54CF66D5DE5 /* Pods-nyu-afr.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "nyu-afr/Info.plist";
@@ -366,6 +508,7 @@
 		};
 		118265791E9ACAB500AC9491 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DC466BAD5BBB0AD3F40C7CB /* Pods-nyu-afr.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "nyu-afr/Info.plist";
@@ -377,6 +520,7 @@
 		};
 		1182657B1E9ACAB500AC9491 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63133D087CA223413603467A /* Pods-nyu-afrTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "nyu-afrTests/Info.plist";
@@ -389,6 +533,7 @@
 		};
 		1182657C1E9ACAB500AC9491 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB78F2E28D1984777076E879 /* Pods-nyu-afrTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "nyu-afrTests/Info.plist";
@@ -418,6 +563,7 @@
 				118265791E9ACAB500AC9491 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1182657A1E9ACAB500AC9491 /* Build configuration list for PBXNativeTarget "nyu-afrTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +572,7 @@
 				1182657C1E9ACAB500AC9491 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
