@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>480298138958-8ingb1vam7e320kl3eua3g5keu0qeqtm.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.480298138958-8ingb1vam7e320kl3eua3g5keu0qeqtm</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB1XIKes3HF6rPfMuo-vjtMqRVRovu80bU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>480298138958</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>nyu.edu.nyu-afr</string>
+	<key>PROJECT_ID</key>
+	<string>nyu-afr</string>
+	<key>STORAGE_BUCKET</key>
+	<string>nyu-afr.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:480298138958:ios:7ecaf3cbf0f539cb</string>
+	<key>DATABASE_URL</key>
+	<string>https://nyu-afr.firebaseio.com</string>
+</dict>
+</plist>
