@@ -23,6 +23,9 @@
 		11D77E251E9DBB1D00A37459 /* QuestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D77E241E9DBB1D00A37459 /* QuestViewController.m */; };
 		4C97ED99DACD99890A4E1F77 /* libPods-nyu-afr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBE10562CCC80114D3AC6D3 /* libPods-nyu-afr.a */; };
 		A38208C5F347AC68CBA8A69A /* libPods-nyu-afrTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 434AE8B18237FC9630396911 /* libPods-nyu-afrTests.a */; };
+		C787A1581E9FD7EE00B9495C /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C787A1571E9FD7EE00B9495C /* MenuViewController.m */; };
+		C787A15B1E9FD80900B9495C /* AcheivementsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C787A15A1E9FD80900B9495C /* AcheivementsViewController.m */; };
+		C787A15E1E9FD82200B9495C /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C787A15D1E9FD82200B9495C /* ProfileViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,12 @@
 		434AE8B18237FC9630396911 /* libPods-nyu-afrTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-nyu-afrTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63133D087CA223413603467A /* Pods-nyu-afrTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyu-afrTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nyu-afrTests/Pods-nyu-afrTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8DC466BAD5BBB0AD3F40C7CB /* Pods-nyu-afr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyu-afr.release.xcconfig"; path = "Pods/Target Support Files/Pods-nyu-afr/Pods-nyu-afr.release.xcconfig"; sourceTree = "<group>"; };
+		C787A1561E9FD7EE00B9495C /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		C787A1571E9FD7EE00B9495C /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		C787A1591E9FD80900B9495C /* AcheivementsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcheivementsViewController.h; sourceTree = "<group>"; };
+		C787A15A1E9FD80900B9495C /* AcheivementsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcheivementsViewController.m; sourceTree = "<group>"; };
+		C787A15C1E9FD82200B9495C /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		C787A15D1E9FD82200B9495C /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		CB78F2E28D1984777076E879 /* Pods-nyu-afrTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyu-afrTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-nyu-afrTests/Pods-nyu-afrTests.release.xcconfig"; sourceTree = "<group>"; };
 		CD2937EB9C26C54CF66D5DE5 /* Pods-nyu-afr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyu-afr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nyu-afr/Pods-nyu-afr.debug.xcconfig"; sourceTree = "<group>"; };
 		DBBE10562CCC80114D3AC6D3 /* libPods-nyu-afr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-nyu-afr.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,6 +136,12 @@
 				11D77E231E9DBB1D00A37459 /* QuestViewController.h */,
 				11D77E241E9DBB1D00A37459 /* QuestViewController.m */,
 				118265611E9ACAB500AC9491 /* Main.storyboard */,
+				C787A1561E9FD7EE00B9495C /* MenuViewController.h */,
+				C787A1571E9FD7EE00B9495C /* MenuViewController.m */,
+				C787A1591E9FD80900B9495C /* AcheivementsViewController.h */,
+				C787A15A1E9FD80900B9495C /* AcheivementsViewController.m */,
+				C787A15C1E9FD82200B9495C /* ProfileViewController.h */,
+				C787A15D1E9FD82200B9495C /* ProfileViewController.m */,
 				118265641E9ACAB500AC9491 /* Assets.xcassets */,
 				1182657D1E9AD21700AC9491 /* NYUAFR2.png */,
 				118265661E9ACAB500AC9491 /* LaunchScreen.storyboard */,
@@ -378,12 +393,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				11D77E1F1E9D9DBB00A37459 /* SignupViewController.m in Sources */,
+				C787A1581E9FD7EE00B9495C /* MenuViewController.m in Sources */,
 				11D77E251E9DBB1D00A37459 /* QuestViewController.m in Sources */,
 				11D77E221E9DB60F00A37459 /* MainTabBarController.m in Sources */,
 				118265601E9ACAB500AC9491 /* ViewController.m in Sources */,
 				1182655D1E9ACAB500AC9491 /* AppDelegate.m in Sources */,
 				1182655A1E9ACAB500AC9491 /* main.m in Sources */,
 				11D77E191E9D99F900A37459 /* Model.m in Sources */,
+				C787A15E1E9FD82200B9495C /* ProfileViewController.m in Sources */,
+				C787A15B1E9FD80900B9495C /* AcheivementsViewController.m in Sources */,
 				11D77E1C1E9D9DA700A37459 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
