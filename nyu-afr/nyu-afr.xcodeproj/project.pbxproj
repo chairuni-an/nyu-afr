@@ -26,6 +26,7 @@
 		C787A1581E9FD7EE00B9495C /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C787A1571E9FD7EE00B9495C /* MenuViewController.m */; };
 		C787A15B1E9FD80900B9495C /* AcheivementsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C787A15A1E9FD80900B9495C /* AcheivementsViewController.m */; };
 		C787A15E1E9FD82200B9495C /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C787A15D1E9FD82200B9495C /* ProfileViewController.m */; };
+		C787A1601EA2D21000B9495C /* imageplaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = C787A15F1EA2D21000B9495C /* imageplaceholder.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		C787A15A1E9FD80900B9495C /* AcheivementsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcheivementsViewController.m; sourceTree = "<group>"; };
 		C787A15C1E9FD82200B9495C /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		C787A15D1E9FD82200B9495C /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		C787A15F1EA2D21000B9495C /* imageplaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imageplaceholder.png; sourceTree = "<group>"; };
 		CB78F2E28D1984777076E879 /* Pods-nyu-afrTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyu-afrTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-nyu-afrTests/Pods-nyu-afrTests.release.xcconfig"; sourceTree = "<group>"; };
 		CD2937EB9C26C54CF66D5DE5 /* Pods-nyu-afr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyu-afr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nyu-afr/Pods-nyu-afr.debug.xcconfig"; sourceTree = "<group>"; };
 		DBBE10562CCC80114D3AC6D3 /* libPods-nyu-afr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-nyu-afr.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +145,7 @@
 				C787A15C1E9FD82200B9495C /* ProfileViewController.h */,
 				C787A15D1E9FD82200B9495C /* ProfileViewController.m */,
 				118265641E9ACAB500AC9491 /* Assets.xcassets */,
+				C787A15F1EA2D21000B9495C /* imageplaceholder.png */,
 				1182657D1E9AD21700AC9491 /* NYUAFR2.png */,
 				118265661E9ACAB500AC9491 /* LaunchScreen.storyboard */,
 				118265691E9ACAB500AC9491 /* Info.plist */,
@@ -280,6 +283,7 @@
 				118265681E9ACAB500AC9491 /* LaunchScreen.storyboard in Resources */,
 				1182657E1E9AD21700AC9491 /* NYUAFR2.png in Resources */,
 				11D77E161E9D931E00A37459 /* GoogleService-Info.plist in Resources */,
+				C787A1601EA2D21000B9495C /* imageplaceholder.png in Resources */,
 				118265651E9ACAB500AC9491 /* Assets.xcassets in Resources */,
 				118265631E9ACAB500AC9491 /* Main.storyboard in Resources */,
 			);
