@@ -21,6 +21,7 @@
 		11D77E1F1E9D9DBB00A37459 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D77E1E1E9D9DBB00A37459 /* SignupViewController.m */; };
 		11D77E221E9DB60F00A37459 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D77E211E9DB60F00A37459 /* MainTabBarController.m */; };
 		11D77E251E9DBB1D00A37459 /* QuestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D77E241E9DBB1D00A37459 /* QuestViewController.m */; };
+		11F14C901E9E9048008C2B04 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F14C8F1E9E9048008C2B04 /* MapViewController.m */; };
 		4C97ED99DACD99890A4E1F77 /* libPods-nyu-afr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBE10562CCC80114D3AC6D3 /* libPods-nyu-afr.a */; };
 		A38208C5F347AC68CBA8A69A /* libPods-nyu-afrTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 434AE8B18237FC9630396911 /* libPods-nyu-afrTests.a */; };
 		C787A1581E9FD7EE00B9495C /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C787A1571E9FD7EE00B9495C /* MenuViewController.m */; };
@@ -54,6 +55,7 @@
 		118265721E9ACAB500AC9491 /* nyu_afrTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = nyu_afrTests.m; sourceTree = "<group>"; };
 		118265741E9ACAB500AC9491 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1182657D1E9AD21700AC9491 /* NYUAFR2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NYUAFR2.png; sourceTree = "<group>"; };
+		11C5FB931EA7FFDC00E97995 /* SquareParkLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SquareParkLocation.gpx; sourceTree = "<group>"; };
 		11D77E151E9D931E00A37459 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		11D77E171E9D99F900A37459 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		11D77E181E9D99F900A37459 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
@@ -65,6 +67,8 @@
 		11D77E211E9DB60F00A37459 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
 		11D77E231E9DBB1D00A37459 /* QuestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestViewController.h; sourceTree = "<group>"; };
 		11D77E241E9DBB1D00A37459 /* QuestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestViewController.m; sourceTree = "<group>"; };
+		11F14C8E1E9E9048008C2B04 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		11F14C8F1E9E9048008C2B04 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		434AE8B18237FC9630396911 /* libPods-nyu-afrTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-nyu-afrTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63133D087CA223413603467A /* Pods-nyu-afrTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyu-afrTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nyu-afrTests/Pods-nyu-afrTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8DC466BAD5BBB0AD3F40C7CB /* Pods-nyu-afr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyu-afr.release.xcconfig"; path = "Pods/Target Support Files/Pods-nyu-afr/Pods-nyu-afr.release.xcconfig"; sourceTree = "<group>"; };
@@ -137,6 +141,8 @@
 				11D77E211E9DB60F00A37459 /* MainTabBarController.m */,
 				11D77E231E9DBB1D00A37459 /* QuestViewController.h */,
 				11D77E241E9DBB1D00A37459 /* QuestViewController.m */,
+				11F14C8E1E9E9048008C2B04 /* MapViewController.h */,
+				11F14C8F1E9E9048008C2B04 /* MapViewController.m */,
 				118265611E9ACAB500AC9491 /* Main.storyboard */,
 				C787A1561E9FD7EE00B9495C /* MenuViewController.h */,
 				C787A1571E9FD7EE00B9495C /* MenuViewController.m */,
@@ -150,6 +156,7 @@
 				118265661E9ACAB500AC9491 /* LaunchScreen.storyboard */,
 				118265691E9ACAB500AC9491 /* Info.plist */,
 				11D77E151E9D931E00A37459 /* GoogleService-Info.plist */,
+				11C5FB931EA7FFDC00E97995 /* SquareParkLocation.gpx */,
 				118265581E9ACAB500AC9491 /* Supporting Files */,
 			);
 			path = "nyu-afr";
@@ -400,6 +407,7 @@
 				C787A1581E9FD7EE00B9495C /* MenuViewController.m in Sources */,
 				11D77E251E9DBB1D00A37459 /* QuestViewController.m in Sources */,
 				11D77E221E9DB60F00A37459 /* MainTabBarController.m in Sources */,
+				11F14C901E9E9048008C2B04 /* MapViewController.m in Sources */,
 				118265601E9ACAB500AC9491 /* ViewController.m in Sources */,
 				1182655D1E9ACAB500AC9491 /* AppDelegate.m in Sources */,
 				1182655A1E9ACAB500AC9491 /* main.m in Sources */,
