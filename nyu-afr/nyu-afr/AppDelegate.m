@@ -21,6 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [FIRApp configure];
+    self.ref = [[FIRDatabase database] reference];
     [GMSServices provideAPIKey:@"AIzaSyDeKPEQLYkFNRSqm7CySFdrJjmd7FDX1GI"];
     [GMSPlacesClient provideAPIKey:@"AIzaSyDeKPEQLYkFNRSqm7CySFdrJjmd7FDX1GI"];
     return YES;
