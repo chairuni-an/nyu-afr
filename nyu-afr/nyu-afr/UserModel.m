@@ -10,7 +10,7 @@
 
 @implementation UserModel
 
-- (id)initWithUserData:(NSDictionary *)userData {
+- (id)initWithUserData:(NSMutableDictionary *)userData {
     if (self = [super init]) {
         self.userData = userData;
     }

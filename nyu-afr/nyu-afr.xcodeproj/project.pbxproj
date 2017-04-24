@@ -16,6 +16,7 @@
 		118265731E9ACAB500AC9491 /* nyu_afrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 118265721E9ACAB500AC9491 /* nyu_afrTests.m */; };
 		1182657E1E9AD21700AC9491 /* NYUAFR2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1182657D1E9AD21700AC9491 /* NYUAFR2.png */; };
 		11C5FB991EAA754D00E97995 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5FB981EAA754D00E97995 /* UserModel.m */; };
+		11C5FB9C1EAD2C3E00E97995 /* QuestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5FB9B1EAD2C3E00E97995 /* QuestModel.m */; };
 		11D77E161E9D931E00A37459 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11D77E151E9D931E00A37459 /* GoogleService-Info.plist */; };
 		11D77E191E9D99F900A37459 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D77E181E9D99F900A37459 /* Model.m */; };
 		11D77E1C1E9D9DA700A37459 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D77E1B1E9D9DA700A37459 /* LoginViewController.m */; };
@@ -59,6 +60,8 @@
 		11C5FB931EA7FFDC00E97995 /* SquareParkLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SquareParkLocation.gpx; sourceTree = "<group>"; };
 		11C5FB971EAA754D00E97995 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		11C5FB981EAA754D00E97995 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		11C5FB9A1EAD2C3E00E97995 /* QuestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestModel.h; sourceTree = "<group>"; };
+		11C5FB9B1EAD2C3E00E97995 /* QuestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestModel.m; sourceTree = "<group>"; };
 		11D77E151E9D931E00A37459 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		11D77E171E9D99F900A37459 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		11D77E181E9D99F900A37459 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
@@ -155,6 +158,8 @@
 				C787A15D1E9FD82200B9495C /* ProfileViewController.m */,
 				11C5FB971EAA754D00E97995 /* UserModel.h */,
 				11C5FB981EAA754D00E97995 /* UserModel.m */,
+				11C5FB9A1EAD2C3E00E97995 /* QuestModel.h */,
+				11C5FB9B1EAD2C3E00E97995 /* QuestModel.m */,
 				118265641E9ACAB500AC9491 /* Assets.xcassets */,
 				C787A15F1EA2D21000B9495C /* imageplaceholder.png */,
 				1182657D1E9AD21700AC9491 /* NYUAFR2.png */,
@@ -416,6 +421,7 @@
 				118265601E9ACAB500AC9491 /* ViewController.m in Sources */,
 				1182655D1E9ACAB500AC9491 /* AppDelegate.m in Sources */,
 				1182655A1E9ACAB500AC9491 /* main.m in Sources */,
+				11C5FB9C1EAD2C3E00E97995 /* QuestModel.m in Sources */,
 				11C5FB991EAA754D00E97995 /* UserModel.m in Sources */,
 				11D77E191E9D99F900A37459 /* Model.m in Sources */,
 				C787A15E1E9FD82200B9495C /* ProfileViewController.m in Sources */,

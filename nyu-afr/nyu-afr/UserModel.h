@@ -10,7 +10,7 @@
 
 @interface UserModel : NSObject
 
-@property (strong, nonatomic) NSDictionary *userData;
-- (id)initWithUserData:(NSDictionary *)userData;
+@property (strong, nonatomic) NSMutableDictionary *userData;
+- (id)initWithUserData:(NSMutableDictionary *)userData;
 
 @end

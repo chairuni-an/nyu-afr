@@ -7,6 +7,7 @@
 //
 
 #import "MainTabBarController.h"
+#import "QuestViewController.h"
 
 @interface MainTabBarController ()
 
@@ -16,6 +17,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    QuestViewController *questVC = (QuestViewController *) [self.viewControllers objectAtIndex:0];
+    questVC.goToMap = ^{
+        NSLog(@"----Masuk");
+        self.selectedIndex = 1;
+    };
     // Do any additional setup after loading the view.
 }
 

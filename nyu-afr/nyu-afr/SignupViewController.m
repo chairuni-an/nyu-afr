@@ -100,7 +100,8 @@
              
              [[[delegate.ref child:@"users"] child:user.uid] setValue:@{@"status": @"NO_ACTIVE_QUEST"}];
              
-             delegate.userModel = [[UserModel alloc] initWithUserData:@{@"status": @"NO_ACTIVE_QUEST"}];
+             delegate.userModel = [[UserModel alloc] init];
+             [delegate.userModel.userData setObject:@"NO_ACTIVE_QUEST" forKey:@"status"];
              
              [self gotoMainTabBar];
          } else {

@@ -10,5 +10,5 @@
 //#import "UserModel.h"
 
 @interface QuestViewController : ViewController
-//@property UserModel *userModel;
+@property void (^goToMap)(void);
 @end

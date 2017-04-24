@@ -7,6 +7,7 @@
 //
 
 #import "MapViewController.h"
+#import "AppDelegate.h"
 @import GooglePlaces;
 @import GoogleMaps;
 
@@ -17,6 +18,9 @@
 @property CLLocationManager *locationManager;
 @property CLLocation *currentLocation;
 @property GMSMapView *mapView;
+@property GMSMarker *marker1;
+@property GMSMarker *marker2;
+@property GMSMarker *marker3;
 
 @end
 
@@ -38,25 +42,6 @@
     self.mapView.settings.myLocationButton = true;
     self.mapView.myLocationEnabled = true;
     self.mapView.hidden = true;
-    
-    // Creates markers in the "possible places"
-    GMSMarker *marker = [[GMSMarker alloc] init];
-    marker.position = CLLocationCoordinate2DMake(40.735863, -73.991084);
-    marker.title = @"Union Square";
-    marker.snippet = @"Australia";
-    marker.map = self.mapView;
-    
-    GMSMarker *marker2 = [[GMSMarker alloc] init];
-    marker2.position = CLLocationCoordinate2DMake(40.728903, -73.992644);
-    marker2.title = @"SHC";
-    marker2.snippet = @"Australia";
-    marker2.map = self.mapView;
-    
-    GMSMarker *marker3 = [[GMSMarker alloc] init];
-    marker3.position = CLLocationCoordinate2DMake(40.7299, -73.9978);
-    marker3.title = @"Kimmel";
-    marker3.snippet = @"Australia";
-    marker3.map = self.mapView;
 
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -65,6 +50,37 @@
     [self.locationManager startUpdatingLocation];
     self.locationManager.delegate = self;
     
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    if ([[delegate.userModel.userData objectForKey:@"status"] isEqualToString:@"NO_ACTIVE_QUEST"]) {
+        self.mapView.hidden = true;
+    } else if ([[delegate.userModel.userData objectForKey:@"status"] isEqualToString:@"QUEST_IN_PROGRESS"]) {
+        self.mapView.hidden = false;
+        
+        // Creates markers in the "possible places"
+        self.marker1 = [[GMSMarker alloc] init];
+        self.marker1.position = CLLocationCoordinate2DMake([[[delegate.userModel.userData objectForKey:@"current_quest"] objectForKey:@"latitude"] doubleValue], [[[delegate.userModel.userData objectForKey:@"current_quest"] objectForKey:@"longitude"] doubleValue]);
+        //self.marker1.title = [delegate.currentQuest objectForKey:@"placename"];
+        self.marker1.snippet = [[delegate.userModel.userData objectForKey:@"current_quest"] objectForKey:@"street_address"];
+        self.marker1.map = self.mapView;
+        
+        self.marker2 = [[GMSMarker alloc] init];
+        self.marker2.position = CLLocationCoordinate2DMake([[[delegate.userModel.userData objectForKey:@"deception_quest1"] objectForKey:@"latitude"] doubleValue], [[[delegate.userModel.userData objectForKey:@"deception_quest1"] objectForKey:@"longitude"] doubleValue]);
+        //self.marker2.title = [delegate.deceptionQuest1 objectForKey:@"placename"];
+        self.marker2.snippet = [[delegate.userModel.userData objectForKey:@"deception_quest1"] objectForKey:@"street_address"];
+        self.marker2.map = self.mapView;
+        
+        self.marker3 = [[GMSMarker alloc] init];
+        self.marker3.position = CLLocationCoordinate2DMake([[[delegate.userModel.userData objectForKey:@"deception_quest2"] objectForKey:@"latitude"] doubleValue], [[[delegate.userModel.userData objectForKey:@"deception_quest2"] objectForKey:@"longitude"] doubleValue]);
+        //self.marker3.title = [delegate.deceptionQuest2 objectForKey:@"placename"];
+        self.marker3.snippet = [[delegate.userModel.userData objectForKey:@"deception_quest2"] objectForKey:@"street_address"];
+        self.marker3.map = self.mapView;
+    }
 }
 
 // LocationManagerDelegate Implementation
