@@ -248,7 +248,7 @@
         <!--Check-->
         <scene sceneID="jR7-bO-cnj">
             <objects>
-                <viewController id="5nd-iy-See" sceneMemberID="viewController">
+                <viewController id="5nd-iy-See" customClass="CheckViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Tfx-bU-6ES"/>
                         <viewControllerLayoutGuide type="bottom" id="KnE-td-dTa"/>
@@ -268,10 +268,21 @@
                                 <rect key="frame" x="37" y="116" width="300" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aoe-30-YpO">
+                                <rect key="frame" x="260" y="424" width="77" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Take Photo"/>
+                                <connections>
+                                    <action selector="takePhoto:" destination="5nd-iy-See" eventType="touchUpInside" id="emo-L5-y3r"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Check" id="54e-VT-WHt"/>
+                    <connections>
+                        <outlet property="myImageView" destination="q3P-9O-7LR" id="PUF-8w-Nxi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ND-Q0-396" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
