@@ -8,7 +8,8 @@
 
 #import "SignupViewController.h"
 #import "MainTabBarController.h"
-@import Firebase;
+#import "AppDelegate.h"
+#import "UserModel.h"
 @import FirebaseAuth;
 
 @interface SignupViewController ()
@@ -16,7 +17,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *emailAddressTF;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTF;
 @property (weak, nonatomic) IBOutlet UITextField *verifyPasswordTF;
-@property (strong, nonatomic) FIRDatabaseReference *ref;
 @property (weak, nonatomic) IBOutlet UILabel *errorLabel;
 
 @end
@@ -25,7 +25,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.ref = [[FIRDatabase database] reference];
     // Do any additional setup after loading the view.
 }
 
@@ -97,6 +96,13 @@
      completion:^(FIRUser *_Nullable user,
                   NSError *_Nullable error) {
          if (!error) {
+             AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+             
+             [[[delegate.ref child:@"users"] child:user.uid] setValue:@{@"status": @"NO_ACTIVE_QUEST"}];
+             
+             delegate.userModel = [[UserModel alloc] init];
+             [delegate.userModel.userData setObject:@"NO_ACTIVE_QUEST" forKey:@"status"];
+             
              [self gotoMainTabBar];
          } else {
              self.errorLabel.text = @"Cannot sign up, please contact our customer service";

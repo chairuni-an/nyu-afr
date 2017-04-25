@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UserModel.h"
+@import Firebase;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) UserModel *userModel;
+@property (strong, nonatomic) FIRDatabaseReference *ref;
 
 
 @end
