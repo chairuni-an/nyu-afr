@@ -7,7 +7,8 @@
 //
 
 #import "ViewController.h"
+//#import "UserModel.h"
 
 @interface QuestViewController : ViewController
-
+@property void (^goToMap)(void);
 @end

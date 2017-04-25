@@ -8,6 +8,8 @@
 
 #import "LoginViewController.h"
 #import "MainTabBarController.h"
+#import "AppDelegate.h"
+#import "UserModel.h"
 @import FirebaseAuth;
 
 @interface LoginViewController ()
@@ -60,7 +62,16 @@
                            password:self.passwordTF.text
                          completion:^(FIRUser *user, NSError *error) {
                              if (!error) {
-                                 [self gotoMainTabBar];
+                                 AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+                                 
+                                 [[[delegate.ref child:@"users"] child:user.uid] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+                                     delegate.userModel = [[UserModel alloc] initWithUserData:snapshot.value];
+                                     [self gotoMainTabBar];
+                                     
+                                 } withCancelBlock:^(NSError * _Nonnull error) {
+                                     NSLog(@"%@", error.localizedDescription);
+                                 }];
+
                              } else {
                                  self.errorLabel.text = @"Incorrect email or password";
                              }
