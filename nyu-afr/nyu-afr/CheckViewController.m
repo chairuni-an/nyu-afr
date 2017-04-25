@@ -10,7 +10,9 @@
 
 @interface CheckViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *myImageView;
-
+@property (weak, nonatomic) IBOutlet UILabel *placenameLabel;
+@property (weak, nonatomic) IBOutlet UIButton *choosePlacenameButton;
+@property (weak, nonatomic) IBOutlet UIButton *submitButton;
 @end
 
 @implementation CheckViewController
