@@ -31,6 +31,12 @@
 		C787A15B1E9FD80900B9495C /* AcheivementsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C787A15A1E9FD80900B9495C /* AcheivementsViewController.m */; };
 		C787A15E1E9FD82200B9495C /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C787A15D1E9FD82200B9495C /* ProfileViewController.m */; };
 		C787A1601EA2D21000B9495C /* imageplaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = C787A15F1EA2D21000B9495C /* imageplaceholder.png */; };
+		C7900EEE1EB0081E00EBD3A4 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7900EED1EB0081E00EBD3A4 /* Bolts.framework */; };
+		C7900EF11EB02DCD00EBD3A4 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7900EF01EB02DCD00EBD3A4 /* ShareViewController.m */; };
+		C7A1E5951EB004A5005255B3 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7A1E5931EB004A4005255B3 /* FBSDKCoreKit.framework */; };
+		C7A1E5961EB004A5005255B3 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7A1E5941EB004A5005255B3 /* FBSDKLoginKit.framework */; };
+		C7A1E5981EB004B2005255B3 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7A1E5971EB004B2005255B3 /* FBSDKShareKit.framework */; };
+		C7A1E59A1EB006C7005255B3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7A1E5991EB006C7005255B3 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +94,14 @@
 		C787A15C1E9FD82200B9495C /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		C787A15D1E9FD82200B9495C /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		C787A15F1EA2D21000B9495C /* imageplaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imageplaceholder.png; sourceTree = "<group>"; };
+		C7900EED1EB0081E00EBD3A4 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		C7900EEF1EB02DCD00EBD3A4 /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
+		C7900EF01EB02DCD00EBD3A4 /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
+		C7900EF21EB0449F00EBD3A4 /* nyu-afr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "nyu-afr.entitlements"; sourceTree = "<group>"; };
+		C7A1E5931EB004A4005255B3 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		C7A1E5941EB004A5005255B3 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		C7A1E5971EB004B2005255B3 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		C7A1E5991EB006C7005255B3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		CB78F2E28D1984777076E879 /* Pods-nyu-afrTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyu-afrTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-nyu-afrTests/Pods-nyu-afrTests.release.xcconfig"; sourceTree = "<group>"; };
 		CD2937EB9C26C54CF66D5DE5 /* Pods-nyu-afr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyu-afr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nyu-afr/Pods-nyu-afr.debug.xcconfig"; sourceTree = "<group>"; };
 		DBBE10562CCC80114D3AC6D3 /* libPods-nyu-afr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-nyu-afr.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,7 +112,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7900EEE1EB0081E00EBD3A4 /* Bolts.framework in Frameworks */,
+				C7A1E5981EB004B2005255B3 /* FBSDKShareKit.framework in Frameworks */,
 				4C97ED99DACD99890A4E1F77 /* libPods-nyu-afr.a in Frameworks */,
+				C7A1E5951EB004A5005255B3 /* FBSDKCoreKit.framework in Frameworks */,
+				C7A1E5961EB004A5005255B3 /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +134,7 @@
 		1182654C1E9ACAB500AC9491 = {
 			isa = PBXGroup;
 			children = (
+				C7A1E5991EB006C7005255B3 /* Default-568h@2x.png */,
 				118265571E9ACAB500AC9491 /* nyu-afr */,
 				118265711E9ACAB500AC9491 /* nyu-afrTests */,
 				118265561E9ACAB500AC9491 /* Products */,
@@ -136,6 +155,7 @@
 		118265571E9ACAB500AC9491 /* nyu-afr */ = {
 			isa = PBXGroup;
 			children = (
+				C7900EF21EB0449F00EBD3A4 /* nyu-afr.entitlements */,
 				1182655B1E9ACAB500AC9491 /* AppDelegate.h */,
 				1182655C1E9ACAB500AC9491 /* AppDelegate.m */,
 				11D77E171E9D99F900A37459 /* Model.h */,
@@ -155,6 +175,8 @@
 				11C5FB9D1EAE8FCE00E97995 /* CheckViewController.h */,
 				11C5FB9E1EAE8FCE00E97995 /* CheckViewController.m */,
 				118265611E9ACAB500AC9491 /* Main.storyboard */,
+				C7900EEF1EB02DCD00EBD3A4 /* ShareViewController.h */,
+				C7900EF01EB02DCD00EBD3A4 /* ShareViewController.m */,
 				C787A1561E9FD7EE00B9495C /* MenuViewController.h */,
 				C787A1571E9FD7EE00B9495C /* MenuViewController.m */,
 				C787A1591E9FD80900B9495C /* AcheivementsViewController.h */,
@@ -197,6 +219,10 @@
 		20774AE1C93A41B7A84E1323 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C7900EED1EB0081E00EBD3A4 /* Bolts.framework */,
+				C7A1E5971EB004B2005255B3 /* FBSDKShareKit.framework */,
+				C7A1E5931EB004A4005255B3 /* FBSDKCoreKit.framework */,
+				C7A1E5941EB004A5005255B3 /* FBSDKLoginKit.framework */,
 				DBBE10562CCC80114D3AC6D3 /* libPods-nyu-afr.a */,
 				434AE8B18237FC9630396911 /* libPods-nyu-afrTests.a */,
 			);
@@ -269,7 +295,13 @@
 				TargetAttributes = {
 					118265541E9ACAB500AC9491 = {
 						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = D7FA3788FQ;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					1182656D1E9ACAB500AC9491 = {
 						CreatedOnToolsVersion = 8.3;
@@ -307,6 +339,7 @@
 				11D77E161E9D931E00A37459 /* GoogleService-Info.plist in Resources */,
 				C787A1601EA2D21000B9495C /* imageplaceholder.png in Resources */,
 				118265651E9ACAB500AC9491 /* Assets.xcassets in Resources */,
+				C7A1E59A1EB006C7005255B3 /* Default-568h@2x.png in Resources */,
 				118265631E9ACAB500AC9491 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,7 +366,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		0EB43B927D2D3959904360E2 /* [CP] Embed Pods Frameworks */ = {
@@ -363,7 +396,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		895E266C609EDE07EED916B2 /* [CP] Copy Pods Resources */ = {
@@ -420,6 +453,7 @@
 			files = (
 				11D77E1F1E9D9DBB00A37459 /* SignupViewController.m in Sources */,
 				C787A1581E9FD7EE00B9495C /* MenuViewController.m in Sources */,
+				C7900EF11EB02DCD00EBD3A4 /* ShareViewController.m in Sources */,
 				11D77E251E9DBB1D00A37459 /* QuestViewController.m in Sources */,
 				11D77E221E9DB60F00A37459 /* MainTabBarController.m in Sources */,
 				11F14C901E9E9048008C2B04 /* MapViewController.m in Sources */,
@@ -571,6 +605,12 @@
 			baseConfigurationReference = CD2937EB9C26C54CF66D5DE5 /* Pods-nyu-afr.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "nyu-afr/nyu-afr.entitlements";
+				DEVELOPMENT_TEAM = D7FA3788FQ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "nyu-afr/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nyu.edu.nyu-afr";
@@ -583,6 +623,12 @@
 			baseConfigurationReference = 8DC466BAD5BBB0AD3F40C7CB /* Pods-nyu-afr.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "nyu-afr/nyu-afr.entitlements";
+				DEVELOPMENT_TEAM = D7FA3788FQ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "nyu-afr/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nyu.edu.nyu-afr";

@@ -7,7 +7,8 @@
 //
 
 #import "CheckViewController.h"
-
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKShareKit/FBSDKShareKit.h>
 @interface CheckViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *myImageView;
 @property (weak, nonatomic) IBOutlet UILabel *placenameLabel;
@@ -20,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,9 +65,28 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     
     UIImage * img = [info valueForKey:UIImagePickerControllerOriginalImage]; // you can change it to edited image
-    
+ 
     self.myImageView.image = img;
-
+    
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"My Alert"
+                                                                   message:@"Share your acheivement to Facebook?"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* yesAction = [UIAlertAction actionWithTitle:@"Yes!" style:UIAlertActionStyleDefault
+                                                      handler:^(UIAlertAction * action) {
+                                                          [self performSegueWithIdentifier:@"ShareView" sender:nil];
+                                                          [alert dismissViewControllerAnimated:TRUE completion:nil];   }];
+    UIAlertAction* noAction = [UIAlertAction actionWithTitle:@"No Thanks" style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction * action) {}];
+    
+    [alert addAction:yesAction];
+    [alert addAction:noAction];
+    [self presentViewController:alert animated:YES completion:nil];
+    
+  
+        
+    
+    
      //Or you can get the image url from AssetsLibrary
      //NSURL *path = [info valueForKey:UIImagePickerControllerReferenceURL];
 }
