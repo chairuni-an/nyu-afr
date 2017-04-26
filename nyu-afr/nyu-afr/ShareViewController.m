@@ -9,7 +9,12 @@
 #import "ShareViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <FBSDKShareKit/FBSDKShareKit.h>
+#import "SharedData.h"
 @interface ShareViewController ()
+
+@property (strong, nonatomic) IBOutlet UIImageView *imageTest;
+
 
 @end
 
@@ -17,11 +22,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    SharedData *data =[SharedData sharedInstance];
     UIButton *myLoginButton=[UIButton buttonWithType:UIButtonTypeCustom];
-    myLoginButton.backgroundColor=[UIColor darkGrayColor];
+    myLoginButton.backgroundColor=[UIColor purpleColor];
     myLoginButton.frame=CGRectMake(0,0,180,40);
     myLoginButton.center = self.view.center;
-    [myLoginButton setTitle: @"My Login Button" forState: UIControlStateNormal];
+    [myLoginButton setTitle: @"Share to Facebook!" forState: UIControlStateNormal];
     
     // Handle clicks on the button
     [myLoginButton
@@ -30,6 +36,7 @@
     
     // Add the button to the view
     [self.view addSubview:myLoginButton];
+    self.imageTest.image = [data shareImage];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,6 +47,7 @@
 -(void)loginButtonClicked
 {
     FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+ 
     [login logOut];  
     [login
      logInWithReadPermissions: @[@"public_profile"]
@@ -51,9 +59,16 @@
              NSLog(@"Cancelled");
          } else {
              NSLog(@"Logged in");
+             FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc] init];
+             content.imageURL = [NSURL URLWithString:@"https://i.vimeocdn.com/portrait/58832_300x300"];
+             [FBSDKShareDialog showFromViewController:self
+                                          withContent:content
+                                             delegate:nil];
+      
          }
      }];
 }
+
 
 /*
 #pragma mark - Navigation
@@ -64,5 +79,6 @@
     // Pass the selected object to the new view controller.
 }
 */
+
 
 @end

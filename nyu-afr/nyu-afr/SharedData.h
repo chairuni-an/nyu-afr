@@ -1,0 +1,15 @@
+//
+//  SharedData.h
+//  nyu-afr
+//
+//  Created by Alyssa Hsiang on 4/26/17.
+//  Copyright © 2017 New York University. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+@interface SharedData : NSObject
+@property (nonatomic, strong) UIImage *shareImage;
+
++(SharedData *) sharedInstance;
+@end

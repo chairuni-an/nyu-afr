@@ -33,6 +33,7 @@
 		C787A1601EA2D21000B9495C /* imageplaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = C787A15F1EA2D21000B9495C /* imageplaceholder.png */; };
 		C7900EEE1EB0081E00EBD3A4 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7900EED1EB0081E00EBD3A4 /* Bolts.framework */; };
 		C7900EF11EB02DCD00EBD3A4 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7900EF01EB02DCD00EBD3A4 /* ShareViewController.m */; };
+		C7900EF51EB0E81D00EBD3A4 /* SharedData.m in Sources */ = {isa = PBXBuildFile; fileRef = C7900EF41EB0E81D00EBD3A4 /* SharedData.m */; };
 		C7A1E5951EB004A5005255B3 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7A1E5931EB004A4005255B3 /* FBSDKCoreKit.framework */; };
 		C7A1E5961EB004A5005255B3 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7A1E5941EB004A5005255B3 /* FBSDKLoginKit.framework */; };
 		C7A1E5981EB004B2005255B3 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7A1E5971EB004B2005255B3 /* FBSDKShareKit.framework */; };
@@ -98,6 +99,8 @@
 		C7900EEF1EB02DCD00EBD3A4 /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
 		C7900EF01EB02DCD00EBD3A4 /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
 		C7900EF21EB0449F00EBD3A4 /* nyu-afr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "nyu-afr.entitlements"; sourceTree = "<group>"; };
+		C7900EF31EB0E81D00EBD3A4 /* SharedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedData.h; sourceTree = "<group>"; };
+		C7900EF41EB0E81D00EBD3A4 /* SharedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedData.m; sourceTree = "<group>"; };
 		C7A1E5931EB004A4005255B3 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		C7A1E5941EB004A5005255B3 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		C7A1E5971EB004B2005255B3 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
@@ -177,6 +180,8 @@
 				118265611E9ACAB500AC9491 /* Main.storyboard */,
 				C7900EEF1EB02DCD00EBD3A4 /* ShareViewController.h */,
 				C7900EF01EB02DCD00EBD3A4 /* ShareViewController.m */,
+				C7900EF31EB0E81D00EBD3A4 /* SharedData.h */,
+				C7900EF41EB0E81D00EBD3A4 /* SharedData.m */,
 				C787A1561E9FD7EE00B9495C /* MenuViewController.h */,
 				C787A1571E9FD7EE00B9495C /* MenuViewController.m */,
 				C787A1591E9FD80900B9495C /* AcheivementsViewController.h */,
@@ -455,6 +460,7 @@
 				C787A1581E9FD7EE00B9495C /* MenuViewController.m in Sources */,
 				C7900EF11EB02DCD00EBD3A4 /* ShareViewController.m in Sources */,
 				11D77E251E9DBB1D00A37459 /* QuestViewController.m in Sources */,
+				C7900EF51EB0E81D00EBD3A4 /* SharedData.m in Sources */,
 				11D77E221E9DB60F00A37459 /* MainTabBarController.m in Sources */,
 				11F14C901E9E9048008C2B04 /* MapViewController.m in Sources */,
 				118265601E9ACAB500AC9491 /* ViewController.m in Sources */,

@@ -9,6 +9,7 @@
 #import "CheckViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKShareKit/FBSDKShareKit.h>
+#import "SharedData.h"
 @interface CheckViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *myImageView;
 @property (weak, nonatomic) IBOutlet UILabel *placenameLabel;
@@ -63,11 +64,11 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     
     [self dismissViewControllerAnimated:YES completion:nil];
-    
+    SharedData *data =[SharedData sharedInstance];
     UIImage * img = [info valueForKey:UIImagePickerControllerOriginalImage]; // you can change it to edited image
  
     self.myImageView.image = img;
-    
+    [data setShareImage:img];
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"My Alert"
                                                                    message:@"Share your acheivement to Facebook?"
                                                             preferredStyle:UIAlertControllerStyleAlert];
