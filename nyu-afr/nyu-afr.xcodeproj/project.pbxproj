@@ -27,6 +27,7 @@
 		11F14C901E9E9048008C2B04 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F14C8F1E9E9048008C2B04 /* MapViewController.m */; };
 		4C97ED99DACD99890A4E1F77 /* libPods-nyu-afr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBE10562CCC80114D3AC6D3 /* libPods-nyu-afr.a */; };
 		A38208C5F347AC68CBA8A69A /* libPods-nyu-afrTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 434AE8B18237FC9630396911 /* libPods-nyu-afrTests.a */; };
+		C77FE2501EB1084200314D33 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C77FE24F1EB1084200314D33 /* TableViewController.m */; };
 		C787A1581E9FD7EE00B9495C /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C787A1571E9FD7EE00B9495C /* MenuViewController.m */; };
 		C787A15B1E9FD80900B9495C /* AcheivementsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C787A15A1E9FD80900B9495C /* AcheivementsViewController.m */; };
 		C787A15E1E9FD82200B9495C /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C787A15D1E9FD82200B9495C /* ProfileViewController.m */; };
@@ -88,6 +89,8 @@
 		434AE8B18237FC9630396911 /* libPods-nyu-afrTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-nyu-afrTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63133D087CA223413603467A /* Pods-nyu-afrTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyu-afrTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nyu-afrTests/Pods-nyu-afrTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8DC466BAD5BBB0AD3F40C7CB /* Pods-nyu-afr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyu-afr.release.xcconfig"; path = "Pods/Target Support Files/Pods-nyu-afr/Pods-nyu-afr.release.xcconfig"; sourceTree = "<group>"; };
+		C77FE24E1EB1084200314D33 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		C77FE24F1EB1084200314D33 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		C787A1561E9FD7EE00B9495C /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		C787A1571E9FD7EE00B9495C /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		C787A1591E9FD80900B9495C /* AcheivementsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcheivementsViewController.h; sourceTree = "<group>"; };
@@ -178,6 +181,8 @@
 				11C5FB9D1EAE8FCE00E97995 /* CheckViewController.h */,
 				11C5FB9E1EAE8FCE00E97995 /* CheckViewController.m */,
 				118265611E9ACAB500AC9491 /* Main.storyboard */,
+				C77FE24E1EB1084200314D33 /* TableViewController.h */,
+				C77FE24F1EB1084200314D33 /* TableViewController.m */,
 				C7900EEF1EB02DCD00EBD3A4 /* ShareViewController.h */,
 				C7900EF01EB02DCD00EBD3A4 /* ShareViewController.m */,
 				C7900EF31EB0E81D00EBD3A4 /* SharedData.h */,
@@ -469,6 +474,7 @@
 				11C5FB9C1EAD2C3E00E97995 /* QuestModel.m in Sources */,
 				11C5FB991EAA754D00E97995 /* UserModel.m in Sources */,
 				11D77E191E9D99F900A37459 /* Model.m in Sources */,
+				C77FE2501EB1084200314D33 /* TableViewController.m in Sources */,
 				C787A15E1E9FD82200B9495C /* ProfileViewController.m in Sources */,
 				C787A15B1E9FD80900B9495C /* AcheivementsViewController.m in Sources */,
 				11C5FB9F1EAE8FCE00E97995 /* CheckViewController.m in Sources */,

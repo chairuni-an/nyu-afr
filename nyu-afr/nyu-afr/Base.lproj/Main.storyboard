@@ -324,7 +324,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="&gt;"/>
                                 <connections>
-                                    <segue destination="fKW-fL-1yX" kind="presentation" id="URK-Qx-uaF"/>
+                                    <segue destination="YJX-gO-0WK" kind="presentation" id="bN8-4p-ORa"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PjI-qn-DW5">
@@ -360,32 +360,32 @@
             <point key="canvasLocation" x="3420" y="965.6671664167917"/>
         </scene>
         <!--Table View Controller-->
-        <scene sceneID="dGh-Le-mAh">
+        <scene sceneID="BbQ-ce-kuL">
             <objects>
-                <tableViewController id="fKW-fL-1yX" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="8gE-qZ-uBf">
+                <tableViewController id="YJX-gO-0WK" customClass="TableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="71" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ywe-7v-BnW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gk0-ob-O4A">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="71" id="L84-n7-hng">
+                                <rect key="frame" x="0.0" y="28" width="375" height="71"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gk0-ob-O4A" id="F8h-5y-B6k">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L84-n7-hng" id="gKE-vD-jYn">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="70.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="fKW-fL-1yX" id="cpi-Ns-zNm"/>
-                            <outlet property="delegate" destination="fKW-fL-1yX" id="az9-6f-wva"/>
+                            <outlet property="dataSource" destination="YJX-gO-0WK" id="9jc-BD-MT5"/>
+                            <outlet property="delegate" destination="YJX-gO-0WK" id="C9e-ko-AtP"/>
                         </connections>
                     </tableView>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jl2-qq-IaH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lpe-rc-o2n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4248.8000000000002" y="965.6671664167917"/>
+            <point key="canvasLocation" x="4117.6000000000004" y="956.67166416791611"/>
         </scene>
         <!--Menu-->
         <scene sceneID="yqT-pF-Njb">
