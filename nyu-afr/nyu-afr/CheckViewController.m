@@ -140,6 +140,24 @@
         child: [FIRAuth auth].currentUser.uid]
        child: @"status"]
      setValue: @"NO_ACTIVE_QUEST"];
+    [delegate.userModel.userData setObject:@"NO_ACTIVE_QUEST" forKey:@"status"];
+    
+    
+    NSMutableDictionary *summary = [delegate.userModel.userData objectForKey:@"summary"];
+    int questCount = 1;
+    if (summary != nil) {
+        NSNumber *quests = [summary objectForKey:@"quests"];
+        if (quests != nil) {
+            questCount += [quests intValue];
+        }
+    }
+    
+    
+    [[[[[delegate.ref child:@"users"]
+        child: [FIRAuth auth].currentUser.uid]
+       child: @"summary"]
+      child: @"quests"]
+     setValue: [NSNumber numberWithInt:questCount]];
     
     
     
@@ -163,8 +181,6 @@
                child: [snapshot.value objectForKey: badgeType]]
               setValue: [FIRServerValue timestamp]];
              
-    
-             NSMutableDictionary *summary = [delegate.userModel.userData objectForKey:@"summary"];
              int badgeCount = 1;
              if (summary != nil) {
                  NSNumber *badge = [delegate.userModel.userData objectForKey:badgeType];
@@ -198,7 +214,7 @@
 
     [data setShareImage:img];
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"My Alert"
-                                                                   message:@"Share your acheivement to Facebook?"
+                                                                   message:@"Share your achievement to Facebook?"
                                                             preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* yesAction = [UIAlertAction actionWithTitle:@"Yes!" style:UIAlertActionStyleDefault
