@@ -77,8 +77,11 @@
         }
         
         NSString *userID = [FIRAuth auth].currentUser.uid;
-        [[[delegate.ref child:@"users"] child:userID] setValue:@{@"status": @"QUEST_IN_PROGRESS"}];
-        [delegate.userModel.userData setObject:@"QUEST_IN_PROGRESS" forKey:@"current_quest"];
+        [[[[delegate.ref child: @"users"]
+           child: userID]
+          child:@"status"]
+         setValue:@"QUEST_IN_PROGRESS"];
+        [delegate.userModel.userData setObject:@"QUEST_IN_PROGRESS" forKey:@"status"];
         
         for (NSString *key in quests) {
             if (i == rand1) {
