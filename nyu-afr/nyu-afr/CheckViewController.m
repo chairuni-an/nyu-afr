@@ -92,7 +92,6 @@
                                                                NSError *error) {
                                                       if (error != nil) {
                                                           // Uh-oh, an error occurred!
-                                                          NSLog(@"-----aaak");
 
                                                       } else {
                                                           // Metadata contains file metadata such as size, content-type, and download URL.
@@ -128,7 +127,7 @@
     
     NSMutableDictionary *categories = [delegate.userModel.userData objectForKey:@"categories"];
     int categoryCount = 1;
-    if (!categories) {
+    if (categories != nil) {
         categoryCount += [[categories objectForKey:[currentQuest objectForKey:@"category"]] integerValue];
     }
     [[[[[delegate.ref child:@"users"]
@@ -136,14 +135,53 @@
         child: @"categories"]
         child: [currentQuest objectForKey:@"category"]]
       setValue: [NSNumber numberWithInt:categoryCount]];
-    NSLog(@"----- C");
     
-    if (categoryCount >= 3) {
-        // add gold badge
-    } else if (categoryCount >= 2) {
-        // add silver badge
-    } else if (categoryCount >= 1) {
-        // add bronze badge
+    [[[[delegate.ref child:@"users"]
+        child: [FIRAuth auth].currentUser.uid]
+       child: @"status"]
+     setValue: @"NO_ACTIVE_QUEST"];
+    
+    
+    
+    if (categoryCount == 3 || categoryCount == 2 || categoryCount == 1) {
+        [[[[delegate.ref child:@"quest_categories"]
+          child:[currentQuest objectForKey:@"category"]]
+         child: @"badges"]
+         observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+             
+             NSString *badgeType;
+             if (categoryCount == 3) {
+                 badgeType = @"gold";
+             } else if (categoryCount == 2) {
+                 badgeType = @"silver";
+             } else if (categoryCount == 1) {
+                 badgeType = @"bronze";
+             }
+             [[[[[delegate.ref child:@"users"]
+                 child: [FIRAuth auth].currentUser.uid]
+                child: @"badges"]
+               child: [snapshot.value objectForKey: badgeType]]
+              setValue: [FIRServerValue timestamp]];
+             
+    
+             NSMutableDictionary *summary = [delegate.userModel.userData objectForKey:@"summary"];
+             int badgeCount = 1;
+             if (summary != nil) {
+                 NSNumber *badge = [delegate.userModel.userData objectForKey:badgeType];
+                 if (badge != nil) {
+                     badgeCount += [badge intValue];
+                 }
+             }
+             [[[[[delegate.ref child:@"users"]
+                 child: [FIRAuth auth].currentUser.uid]
+                child: @"summary"]
+               child: badgeType]
+              setValue: [NSNumber numberWithInt:badgeCount]];
+             
+             
+        } withCancelBlock:^(NSError * _Nonnull error) {
+            NSLog(@"%@", error.localizedDescription);
+        }];
     }
 
 }
@@ -173,13 +211,6 @@
     [alert addAction:yesAction];
     [alert addAction:noAction];
     [self presentViewController:alert animated:YES completion:nil];
-    
-  
-        
-    
-    
-     //Or you can get the image url from AssetsLibrary
-     //NSURL *path = [info valueForKey:UIImagePickerControllerReferenceURL]
 }
 
 /*
