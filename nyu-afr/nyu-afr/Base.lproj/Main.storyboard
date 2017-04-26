@@ -331,6 +331,9 @@
                                 <rect key="frame" x="161" y="557" width="53" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Submit!"/>
+                                <connections>
+                                    <action selector="submitButtonPressed:" destination="5nd-iy-See" eventType="touchUpInside" id="bJd-4H-NHS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
