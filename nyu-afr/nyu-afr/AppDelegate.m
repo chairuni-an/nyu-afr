@@ -22,6 +22,7 @@
     // Override point for customization after application launch.
     [FIRApp configure];
     self.ref = [[FIRDatabase database] reference];
+    self.storage = [FIRStorage storage];
     [GMSServices provideAPIKey:@"AIzaSyDeKPEQLYkFNRSqm7CySFdrJjmd7FDX1GI"];
     [GMSPlacesClient provideAPIKey:@"AIzaSyDeKPEQLYkFNRSqm7CySFdrJjmd7FDX1GI"];
     [[FBSDKApplicationDelegate sharedInstance] application:application
