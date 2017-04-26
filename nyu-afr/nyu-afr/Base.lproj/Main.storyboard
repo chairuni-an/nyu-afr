@@ -335,6 +335,14 @@
                                     <action selector="submitButtonPressed:" destination="5nd-iy-See" eventType="touchUpInside" id="bJd-4H-NHS"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLZ-kv-rWh">
+                                <rect key="frame" x="37" y="424" width="102" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Browse Library"/>
+                                <connections>
+                                    <action selector="browsePhotoFromLibrary:" destination="5nd-iy-See" eventType="touchUpInside" id="xlu-Ef-BiP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

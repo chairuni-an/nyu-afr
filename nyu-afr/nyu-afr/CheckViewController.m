@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *choosePlacenameButton;
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
 @property (nonatomic) NSURL *pictureDownloadURL;
+@property (nonatomic) NSString *placeID;
+@property (nonatomic) NSString *placename;
 @end
 
 @implementation CheckViewController
@@ -32,6 +34,15 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)browsePhotoFromLibrary:(id)sender {
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
+        UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+        imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        imagePickerController.delegate = self;
+        imagePickerController.allowsEditing = false;
+        [self presentViewController:imagePickerController animated:YES completion:nil];
+    }
 }
 
 - (IBAction)takePhoto:(id)sender
@@ -48,56 +59,39 @@
                              [picker takePicture];
                          }];
         
-    } else if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
-        UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
-        imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        imagePickerController.delegate = self;
-        imagePickerController.allowsEditing = false;
-        [self presentViewController:imagePickerController animated:YES completion:nil];
     }
 
 }
 
 - (IBAction)submitButtonPressed:(id)sender {
-    if (self.myImageView.image != nil) {
+    // dummy to fill the placeID and placename
+    // it should be filled after choosing the placename from the tableview
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    self.placeID = [[delegate.userModel.userData objectForKey:@"current_quest"] objectForKey:@"key"];
+    self.placename = [[delegate.userModel.userData objectForKey:@"current_quest"] objectForKey:@"placename"];
+    
+    if (self.myImageView.image != nil && self.placeID != nil && self.placename != nil) {
         [self submitAnswer];
     }
 }
 
 - (void)submitAnswer {
-    NSLog(@"going to submit answer");
-    BOOL isAnswerRight = YES;
-    if (isAnswerRight) {
+    if ([self checkAnswer]) {
         // upload picture
         AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        
-        // Data in memory
-        NSLog(@"-----A");
         NSData *data = UIImageJPEGRepresentation(self.myImageView.image, 0.8);
-        NSLog(@"-----B");
-        
-        // Create file metadata including the content type
         FIRStorageMetadata *myMetadata = [[FIRStorageMetadata alloc] init];
         myMetadata.contentType = @"image/jpeg";
-        
-        // Create a root reference
         FIRStorageReference *storageRef = [delegate.storage reference];
-        
-        // Create a reference to 'user_id/userPhoto/filename.jpg'
-        NSLog(@"-----C");
-
         NSString *uuid = [[NSUUID UUID] UUIDString];
         FIRStorageReference *imageRef = [storageRef child:[NSString stringWithFormat:@"%@/userPhoto/%@", [FIRAuth auth].currentUser.uid, uuid]];
-        NSLog(@"-----D");
-
-        // Upload the file to the path "images/rivers.jpg"
         FIRStorageUploadTask *uploadTask = [imageRef putData:data
                                                     metadata:myMetadata
                                                   completion:^(FIRStorageMetadata *metadata,
                                                                NSError *error) {
                                                       if (error != nil) {
                                                           // Uh-oh, an error occurred!
-                                                          NSLog(@"-----aaak");
 
                                                       } else {
                                                           // Metadata contains file metadata such as size, content-type, and download URL.
@@ -110,26 +104,101 @@
     }
 }
 
-- (void)uploadData {
-    NSLog(@"-----upload data");
-
+- (BOOL)checkAnswer {
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-
-    NSMutableDictionary *temp;
-    [temp setObject:self.pictureDownloadURL forKey:@"selfieURL"];
-    //[temp setObject:key forKey:@"key"]; //later for timestamp
     
-    NSLog(@"-----bismillah");
+    if ([self.placeID isEqualToString:[[delegate.userModel.userData objectForKey:@"current_quest"] objectForKey:@"key"]]) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+- (void)uploadData {
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
     NSMutableDictionary *currentQuest= [delegate.userModel.userData objectForKey:@"current_quest"];
-    
-    NSString *key = [currentQuest objectForKey:@"key"];
 
-    [[[[[delegate.ref child:@"users"]
-        child:[FIRAuth auth].currentUser.uid]
+    [[[[[delegate.ref child: @"users"]
+        child: [FIRAuth auth].currentUser.uid]
         child: @"quests"]
-      child: key]
-        setValue: temp];
-    NSLog(@"-----Binyong");
+        child: [currentQuest objectForKey:@"key"]]
+        setValue: @{@"selfie_url": [self.pictureDownloadURL absoluteString], @"timestamp": [FIRServerValue timestamp]}];
+    
+    NSMutableDictionary *categories = [delegate.userModel.userData objectForKey:@"categories"];
+    int categoryCount = 1;
+    if (categories != nil) {
+        categoryCount += [[categories objectForKey:[currentQuest objectForKey:@"category"]] integerValue];
+    }
+    [[[[[delegate.ref child:@"users"]
+        child: [FIRAuth auth].currentUser.uid]
+        child: @"categories"]
+        child: [currentQuest objectForKey:@"category"]]
+      setValue: [NSNumber numberWithInt:categoryCount]];
+    
+    [[[[delegate.ref child:@"users"]
+        child: [FIRAuth auth].currentUser.uid]
+       child: @"status"]
+     setValue: @"NO_ACTIVE_QUEST"];
+    [delegate.userModel.userData setObject:@"NO_ACTIVE_QUEST" forKey:@"status"];
+    
+    
+    NSMutableDictionary *summary = [delegate.userModel.userData objectForKey:@"summary"];
+    int questCount = 1;
+    if (summary != nil) {
+        NSNumber *quests = [summary objectForKey:@"quests"];
+        if (quests != nil) {
+            questCount += [quests intValue];
+        }
+    }
+    
+    
+    [[[[[delegate.ref child:@"users"]
+        child: [FIRAuth auth].currentUser.uid]
+       child: @"summary"]
+      child: @"quests"]
+     setValue: [NSNumber numberWithInt:questCount]];
+    
+    
+    
+    if (categoryCount == 3 || categoryCount == 2 || categoryCount == 1) {
+        [[[[delegate.ref child:@"quest_categories"]
+          child:[currentQuest objectForKey:@"category"]]
+         child: @"badges"]
+         observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+             
+             NSString *badgeType;
+             if (categoryCount == 3) {
+                 badgeType = @"gold";
+             } else if (categoryCount == 2) {
+                 badgeType = @"silver";
+             } else if (categoryCount == 1) {
+                 badgeType = @"bronze";
+             }
+             [[[[[delegate.ref child:@"users"]
+                 child: [FIRAuth auth].currentUser.uid]
+                child: @"badges"]
+               child: [snapshot.value objectForKey: badgeType]]
+              setValue: [FIRServerValue timestamp]];
+             
+             int badgeCount = 1;
+             if (summary != nil) {
+                 NSNumber *badge = [delegate.userModel.userData objectForKey:badgeType];
+                 if (badge != nil) {
+                     badgeCount += [badge intValue];
+                 }
+             }
+             [[[[[delegate.ref child:@"users"]
+                 child: [FIRAuth auth].currentUser.uid]
+                child: @"summary"]
+               child: badgeType]
+              setValue: [NSNumber numberWithInt:badgeCount]];
+             
+             
+        } withCancelBlock:^(NSError * _Nonnull error) {
+            NSLog(@"%@", error.localizedDescription);
+        }];
+    }
 
 }
 
@@ -145,7 +214,7 @@
 
     [data setShareImage:_pictureDownloadURL];
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"My Alert"
-                                                                   message:@"Share your acheivement to Facebook?"
+                                                                   message:@"Share your achievement to Facebook?"
                                                             preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* yesAction = [UIAlertAction actionWithTitle:@"Yes!" style:UIAlertActionStyleDefault
@@ -158,13 +227,6 @@
     [alert addAction:yesAction];
     [alert addAction:noAction];
     [self presentViewController:alert animated:YES completion:nil];
-    
-  
-        
-    
-    
-     //Or you can get the image url from AssetsLibrary
-     //NSURL *path = [info valueForKey:UIImagePickerControllerReferenceURL]
 }
 
 /*
