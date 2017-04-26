@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 @interface SharedData : NSObject
-@property (nonatomic, strong) UIImage *shareImage;
+@property (nonatomic, strong) NSURL *shareImage;
 
 +(SharedData *) sharedInstance;
 @end
