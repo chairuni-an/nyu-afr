@@ -27,6 +27,7 @@
 		11F14C901E9E9048008C2B04 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F14C8F1E9E9048008C2B04 /* MapViewController.m */; };
 		4C97ED99DACD99890A4E1F77 /* libPods-nyu-afr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBE10562CCC80114D3AC6D3 /* libPods-nyu-afr.a */; };
 		A38208C5F347AC68CBA8A69A /* libPods-nyu-afrTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 434AE8B18237FC9630396911 /* libPods-nyu-afrTests.a */; };
+		C77FD9FE1EB3A8D600932482 /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C77FD9FD1EB3A8D600932482 /* EditProfileViewController.m */; };
 		C77FE2501EB1084200314D33 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C77FE24F1EB1084200314D33 /* TableViewController.m */; };
 		C787A1581E9FD7EE00B9495C /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C787A1571E9FD7EE00B9495C /* MenuViewController.m */; };
 		C787A15B1E9FD80900B9495C /* AcheivementsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C787A15A1E9FD80900B9495C /* AcheivementsViewController.m */; };
@@ -89,6 +90,8 @@
 		434AE8B18237FC9630396911 /* libPods-nyu-afrTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-nyu-afrTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63133D087CA223413603467A /* Pods-nyu-afrTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyu-afrTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nyu-afrTests/Pods-nyu-afrTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8DC466BAD5BBB0AD3F40C7CB /* Pods-nyu-afr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyu-afr.release.xcconfig"; path = "Pods/Target Support Files/Pods-nyu-afr/Pods-nyu-afr.release.xcconfig"; sourceTree = "<group>"; };
+		C77FD9FC1EB3A8D600932482 /* EditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
+		C77FD9FD1EB3A8D600932482 /* EditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
 		C77FE24E1EB1084200314D33 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		C77FE24F1EB1084200314D33 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		C787A1561E9FD7EE00B9495C /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
@@ -193,6 +196,8 @@
 				C787A15A1E9FD80900B9495C /* AcheivementsViewController.m */,
 				C787A15C1E9FD82200B9495C /* ProfileViewController.h */,
 				C787A15D1E9FD82200B9495C /* ProfileViewController.m */,
+				C77FD9FC1EB3A8D600932482 /* EditProfileViewController.h */,
+				C77FD9FD1EB3A8D600932482 /* EditProfileViewController.m */,
 				11C5FB971EAA754D00E97995 /* UserModel.h */,
 				11C5FB981EAA754D00E97995 /* UserModel.m */,
 				11C5FB9A1EAD2C3E00E97995 /* QuestModel.h */,
@@ -376,7 +381,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		0EB43B927D2D3959904360E2 /* [CP] Embed Pods Frameworks */ = {
@@ -406,7 +411,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		895E266C609EDE07EED916B2 /* [CP] Copy Pods Resources */ = {
@@ -468,6 +473,7 @@
 				C7900EF51EB0E81D00EBD3A4 /* SharedData.m in Sources */,
 				11D77E221E9DB60F00A37459 /* MainTabBarController.m in Sources */,
 				11F14C901E9E9048008C2B04 /* MapViewController.m in Sources */,
+				C77FD9FE1EB3A8D600932482 /* EditProfileViewController.m in Sources */,
 				118265601E9ACAB500AC9491 /* ViewController.m in Sources */,
 				1182655D1E9ACAB500AC9491 /* AppDelegate.m in Sources */,
 				1182655A1E9ACAB500AC9491 /* main.m in Sources */,

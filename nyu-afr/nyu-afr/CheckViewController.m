@@ -69,9 +69,10 @@
     // dummy to fill the placeID and placename
     // it should be filled after choosing the placename from the tableview
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    
-    self.placeID = [[delegate.userModel.userData objectForKey:@"current_quest"] objectForKey:@"key"];
-    self.placename = [[delegate.userModel.userData objectForKey:@"current_quest"] objectForKey:@"placename"];
+    SharedData *data =[SharedData sharedInstance];
+
+    self.placeID = [data pickedKey];
+    self.placename = [data pickedLocation];
     
     if (self.isImageChosen && self.placeID != nil && self.placename != nil) {
         [self submitAnswer];
@@ -114,6 +115,11 @@
     } else {
         return false;
     }
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    SharedData *data =[SharedData sharedInstance];
+    self.placenameLabel.text =[data pickedLocation];
 }
 
 - (void)uploadData {
@@ -216,7 +222,7 @@
  
     self.myImageView.image = img;
 
-    [data setShareImage:_pictureDownloadURL];
+    [data setShareImage:img];
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"My Alert"
                                                                    message:@"Share your achievement to Facebook?"
                                                             preferredStyle:UIAlertControllerStyleAlert];
