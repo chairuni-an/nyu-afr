@@ -29,17 +29,16 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    NSLog(@"---View will appear!");
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
     if ([[delegate.userModel.userData objectForKey:@"status"] isEqualToString:@"NO_ACTIVE_QUEST"]) {
-        NSLog(@"---Cleaning the page!");
         // clean the page
         self.titleLabel.text = @"Start Your Journey!";
-        self.clueLabel1.text = @"Press the Go! button";
-        self.clueLabel2.text = @"to begin a quest";
+        self.clueLabel1.text = @"Press the Go! button to begin a quest";
+        self.clueLabel2.text = @"";
+        self.clueLabel3.text = @"";
+        self.clueLabel4.text = @"";
     } else if ([[delegate.userModel.userData objectForKey:@"status"] isEqualToString:@"QUEST_IN_PROGRESS"]) {
-        NSLog(@"---Populating the page!");
         // populate the page
         [self setPageWithQuest];
     }
@@ -85,6 +84,10 @@
          setValue:@"QUEST_IN_PROGRESS"];
         [delegate.userModel.userData setObject:@"QUEST_IN_PROGRESS" forKey:@"status"];
         
+        BOOL isCurrentQuestChosen = false;
+        BOOL isDeceptionQuest1Chosen = false;
+        BOOL isDeceptionQuest2Chosen = false;
+        
         for (NSString *key in quests) {
             if (i == rand1) {
                 [delegate.userModel.userData setObject:[quests objectForKey:key] forKey:@"current_quest"];
@@ -93,6 +96,8 @@
                 [temp setObject:key forKey:@"key"];
                 
                 [[[[delegate.ref child:@"users"] child:userID] child: @"current_quest"] setValue: temp];
+                
+                isCurrentQuestChosen = true;
             } else if (i == rand2) {
                 [delegate.userModel.userData setObject:[quests objectForKey:key] forKey:@"deception_quest1"];
                 
@@ -100,6 +105,8 @@
                 [temp setObject:key forKey:@"key"];
                 
                 [[[[delegate.ref child:@"users"] child:userID] child: @"deception_quest1"] setValue: temp];
+                
+                isDeceptionQuest1Chosen = true;
             } else if (i == rand3) {
                 [delegate.userModel.userData setObject:[quests objectForKey:key] forKey:@"deception_quest2"];
                 
@@ -107,9 +114,11 @@
                 [temp setObject:key forKey:@"key"];
                 
                 [[[[delegate.ref child:@"users"] child:userID] child: @"deception_quest2"] setValue: temp];
+                
+                isDeceptionQuest2Chosen = true;
             }
             
-            if ([delegate.userModel.userData objectForKey:@"current_quest"] != nil && [delegate.userModel.userData objectForKey:@"deception_quest1"] != nil && [delegate.userModel.userData objectForKey:@"deception_quest2"] != nil) {
+            if (isCurrentQuestChosen && isDeceptionQuest1Chosen && isDeceptionQuest2Chosen) {
                 [self setPageWithQuest];
                 break;
             }
