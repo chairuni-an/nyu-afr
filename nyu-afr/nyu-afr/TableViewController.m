@@ -7,11 +7,13 @@
 //
 
 #import "TableViewController.h"
+#import "SharedData.h"
 @import Firebase;
 @interface TableViewController ()
 @property (strong, nonatomic) IBOutlet UITableView *tableview;
 @property (strong, nonatomic) FIRDatabaseReference *ref;
 @property (strong, nonatomic) NSMutableArray *tableDataArray;
+@property (strong, nonatomic) NSMutableArray *keyDataArray;
 @property (strong, nonatomic) NSDictionary *quests;
 @end
 
@@ -21,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _tableDataArray =  [[NSMutableArray alloc] init];
+    _keyDataArray =  [[NSMutableArray alloc] init];
     self.ref = [[FIRDatabase database] reference];
     [[_ref child:@"quests"] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
         // Get user value
@@ -30,7 +33,8 @@
         for(NSString *key in _quests){
              NSLog(@"array2: %@",[[_quests objectForKey:key] objectForKey:@"placename"] );
             [_tableDataArray addObject:[[_quests objectForKey:key] objectForKey:@"placename"]];
-             NSLog(@"%@test1", _tableDataArray);
+            [_keyDataArray addObject: key];
+             NSLog(@"%@test1", _keyDataArray);
             
         }
         
@@ -74,6 +78,16 @@
 }
 -(void)viewDidAppear:(BOOL)animated{
     [self.tableView reloadData];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SharedData *data =[SharedData sharedInstance];
+    
+    [data setPickedLocation:[_tableDataArray objectAtIndex:indexPath.row]];
+    [data setPickedKey:[_keyDataArray objectAtIndex:indexPath.row]];
+    [self performSegueWithIdentifier:@"CheckView" sender:nil];
+  
 }
 
 #pragma mark - Table view data source
