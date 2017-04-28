@@ -22,6 +22,7 @@
  NSString *test;
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.navigationItem setHidesBackButton:YES];
     _tableDataArray =  [[NSMutableArray alloc] init];
     _keyDataArray =  [[NSMutableArray alloc] init];
     self.ref = [[FIRDatabase database] reference];
@@ -86,7 +87,7 @@
     
     [data setPickedLocation:[_tableDataArray objectAtIndex:indexPath.row]];
     [data setPickedKey:[_keyDataArray objectAtIndex:indexPath.row]];
-    [self performSegueWithIdentifier:@"CheckView" sender:nil];
+    [self.navigationController popViewControllerAnimated:YES];
   
 }
 
