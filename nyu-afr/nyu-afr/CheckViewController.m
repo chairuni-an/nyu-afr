@@ -21,15 +21,16 @@
 @property (nonatomic) NSURL *pictureDownloadURL;
 @property (nonatomic) NSString *placeID;
 @property (nonatomic) NSString *placename;
+@property (nonatomic) BOOL isImageChosen;
 @end
 
 @implementation CheckViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.myImageView setImage:[UIImage imageNamed:@"placeholder"]];
+    self.isImageChosen = false;
     // Do any additional setup after loading the view.
-
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -73,7 +74,7 @@
     self.placeID = [data pickedKey];
     self.placename = [data pickedLocation];
     
-    if (self.myImageView.image != nil && self.placeID != nil && self.placename != nil) {
+    if (self.isImageChosen && self.placeID != nil && self.placename != nil) {
         [self submitAnswer];
     }
 }
@@ -212,6 +213,8 @@
 #pragma mark - PickerDelegates
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    
+    self.isImageChosen = true;
     
     [self dismissViewControllerAnimated:YES completion:nil];
     SharedData *data =[SharedData sharedInstance];
