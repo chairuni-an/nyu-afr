@@ -25,6 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.errorLabel.text = @"";
     // Do any additional setup after loading the view.
 }
 
