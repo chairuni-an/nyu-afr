@@ -103,6 +103,10 @@
              
              delegate.userModel = [[UserModel alloc] init];
              [delegate.userModel.userData setObject:@"NO_ACTIVE_QUEST" forKey:@"status"];
+             if (user.displayName != nil) {
+                 [delegate.userModel.userData setObject: user.displayName forKey: @"display_name"];
+             }
+             [delegate.userModel.userData setObject: self.emailAddressTF.text forKey: @"email"];
              
              [self gotoMainTabBar];
          } else {

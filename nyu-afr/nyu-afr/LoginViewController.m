@@ -67,6 +67,10 @@
                                  
                                  [[[delegate.ref child:@"users"] child:user.uid] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
                                      delegate.userModel = [[UserModel alloc] initWithUserData:snapshot.value];
+                                     if (user.displayName != nil) {
+                                         [delegate.userModel.userData setObject: user.displayName forKey: @"display_name"];
+                                     }
+                                     [delegate.userModel.userData setObject: self.emailAddressTF.text forKey: @"email"];
                                      [self gotoMainTabBar];
                                      
                                  } withCancelBlock:^(NSError * _Nonnull error) {
