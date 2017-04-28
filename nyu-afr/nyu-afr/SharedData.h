@@ -10,6 +10,8 @@
 #import <UIKit/UIKit.h>
 @interface SharedData : NSObject
 @property (nonatomic, strong) NSURL *shareImage;
+@property (nonatomic, strong) NSString *pickedLocation;
+@property (nonatomic, strong) NSString *pickedKey;
 
 +(SharedData *) sharedInstance;
 @end

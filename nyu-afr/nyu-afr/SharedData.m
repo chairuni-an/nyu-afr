@@ -10,6 +10,8 @@
 
 @implementation SharedData
 @synthesize shareImage= _shareImage;
+@synthesize pickedLocation= _pickedLocation;
+@synthesize pickedKey= _pickedKey;
 
 
 static SharedData *_sharedInstance;

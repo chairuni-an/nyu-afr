@@ -324,7 +324,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="&gt;"/>
                                 <connections>
-                                    <segue destination="YJX-gO-0WK" kind="presentation" id="bN8-4p-ORa"/>
+                                    <segue destination="YJX-gO-0WK" kind="presentation" identifier="TableView" id="bN8-4p-ORa"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PjI-qn-DW5">
@@ -382,6 +382,9 @@
                             <outlet property="delegate" destination="YJX-gO-0WK" id="C9e-ko-AtP"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="5nd-iy-See" kind="presentation" identifier="CheckView" id="3Kl-DA-iFw"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lpe-rc-o2n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -653,4 +656,7 @@
         <image name="NYUAFR2.png" width="1024" height="1024"/>
         <image name="imageplaceholder.png" width="550" height="400"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="3Kl-DA-iFw"/>
+    </inferredMetricsTieBreakers>
 </document>

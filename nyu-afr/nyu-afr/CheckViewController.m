@@ -29,6 +29,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,9 +68,10 @@
     // dummy to fill the placeID and placename
     // it should be filled after choosing the placename from the tableview
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    
-    self.placeID = [[delegate.userModel.userData objectForKey:@"current_quest"] objectForKey:@"key"];
-    self.placename = [[delegate.userModel.userData objectForKey:@"current_quest"] objectForKey:@"placename"];
+    SharedData *data =[SharedData sharedInstance];
+
+    self.placeID = [data pickedKey];
+    self.placename = [data pickedLocation];
     
     if (self.myImageView.image != nil && self.placeID != nil && self.placename != nil) {
         [self submitAnswer];
@@ -112,6 +114,11 @@
     } else {
         return false;
     }
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    SharedData *data =[SharedData sharedInstance];
+    self.placenameLabel.text =[data pickedLocation];
 }
 
 - (void)uploadData {
