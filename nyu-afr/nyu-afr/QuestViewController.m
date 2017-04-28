@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *clueLabel1;
 @property (weak, nonatomic) IBOutlet UILabel *clueLabel2;
+@property (weak, nonatomic) IBOutlet UILabel *clueLabel3;
+@property (weak, nonatomic) IBOutlet UILabel *clueLabel4;
 @property (weak, nonatomic) IBOutlet UIButton *goButton;
 
 
@@ -128,11 +130,49 @@
 }
 
 - (void)setPageWithQuest {
-    //AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    self.titleLabel.text = [NSString stringWithFormat:@"QUEST #"];
-    self.clueLabel1.text = [NSString stringWithFormat:@"Syalala"];
-    self.clueLabel2.text = [NSString stringWithFormat:@"Syalili"];
+    NSMutableDictionary *summary = [delegate.userModel.userData objectForKey:@"summary"];
+    int questCount = 1;
+    if (summary != nil) {
+        NSNumber *quests = [summary objectForKey:@"quests"];
+        if (quests != nil) {
+            questCount += [quests intValue];
+        }
+    }
+    
+    NSString *text = [[delegate.userModel.userData objectForKey:@"current_quest"] objectForKey:@"clue"];
+    NSString *text1 = @"";
+    NSString *text2 = @"";
+    NSString *text3 = @"";
+    NSString *text4 = @"";
+    
+    if (text.length <= 40) {
+        text1 = text;
+    } else if (text.length <= 80) {
+        text1 = [text substringToIndex:39];
+        text2 = [text substringFromIndex:40];
+    } else if (text.length <= 120) {
+        text1 = [text substringToIndex:39];
+        text2 = [text substringWithRange:NSMakeRange(40, 40)];
+        text3 = [text substringFromIndex:80];
+    } else if (text.length <= 160) {
+        text1 = [text substringToIndex:39];
+        text2 = [text substringWithRange:NSMakeRange(40, 40)];
+        text3 = [text substringWithRange:NSMakeRange(80, 40)];
+        text4 = [text substringFromIndex:120];
+    } else if (text.length > 160) {
+        text1 = [text substringToIndex:39];
+        text2 = [text substringWithRange:NSMakeRange(40, 40)];
+        text3 = [text substringWithRange:NSMakeRange(80, 40)];
+        text4 = [text substringWithRange:NSMakeRange(120, 40)];
+    }
+    
+    self.titleLabel.text = [NSString stringWithFormat:@"QUEST #%d", questCount];
+    self.clueLabel1.text = text1;
+    self.clueLabel2.text = text2;
+    self.clueLabel3.text = text3;
+    self.clueLabel4.text = text4;
 }
 
 /*
