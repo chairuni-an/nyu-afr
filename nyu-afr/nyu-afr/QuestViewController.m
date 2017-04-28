@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *clueLabel1;
 @property (weak, nonatomic) IBOutlet UILabel *clueLabel2;
+@property (weak, nonatomic) IBOutlet UILabel *clueLabel3;
+@property (weak, nonatomic) IBOutlet UILabel *clueLabel4;
 @property (weak, nonatomic) IBOutlet UIButton *goButton;
 
 
@@ -27,17 +29,16 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    NSLog(@"---View will appear!");
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
     if ([[delegate.userModel.userData objectForKey:@"status"] isEqualToString:@"NO_ACTIVE_QUEST"]) {
-        NSLog(@"---Cleaning the page!");
         // clean the page
         self.titleLabel.text = @"Start Your Journey!";
-        self.clueLabel1.text = @"Press the Go! button";
-        self.clueLabel2.text = @"to begin a quest";
+        self.clueLabel1.text = @"Press the Go! button to begin a quest";
+        self.clueLabel2.text = @"";
+        self.clueLabel3.text = @"";
+        self.clueLabel4.text = @"";
     } else if ([[delegate.userModel.userData objectForKey:@"status"] isEqualToString:@"QUEST_IN_PROGRESS"]) {
-        NSLog(@"---Populating the page!");
         // populate the page
         [self setPageWithQuest];
     }
@@ -83,6 +84,10 @@
          setValue:@"QUEST_IN_PROGRESS"];
         [delegate.userModel.userData setObject:@"QUEST_IN_PROGRESS" forKey:@"status"];
         
+        BOOL isCurrentQuestChosen = false;
+        BOOL isDeceptionQuest1Chosen = false;
+        BOOL isDeceptionQuest2Chosen = false;
+        
         for (NSString *key in quests) {
             if (i == rand1) {
                 [delegate.userModel.userData setObject:[quests objectForKey:key] forKey:@"current_quest"];
@@ -91,6 +96,8 @@
                 [temp setObject:key forKey:@"key"];
                 
                 [[[[delegate.ref child:@"users"] child:userID] child: @"current_quest"] setValue: temp];
+                
+                isCurrentQuestChosen = true;
             } else if (i == rand2) {
                 [delegate.userModel.userData setObject:[quests objectForKey:key] forKey:@"deception_quest1"];
                 
@@ -98,6 +105,8 @@
                 [temp setObject:key forKey:@"key"];
                 
                 [[[[delegate.ref child:@"users"] child:userID] child: @"deception_quest1"] setValue: temp];
+                
+                isDeceptionQuest1Chosen = true;
             } else if (i == rand3) {
                 [delegate.userModel.userData setObject:[quests objectForKey:key] forKey:@"deception_quest2"];
                 
@@ -105,9 +114,11 @@
                 [temp setObject:key forKey:@"key"];
                 
                 [[[[delegate.ref child:@"users"] child:userID] child: @"deception_quest2"] setValue: temp];
+                
+                isDeceptionQuest2Chosen = true;
             }
             
-            if ([delegate.userModel.userData objectForKey:@"current_quest"] != nil && [delegate.userModel.userData objectForKey:@"deception_quest1"] != nil && [delegate.userModel.userData objectForKey:@"deception_quest2"] != nil) {
+            if (isCurrentQuestChosen && isDeceptionQuest1Chosen && isDeceptionQuest2Chosen) {
                 [self setPageWithQuest];
                 break;
             }
@@ -128,11 +139,49 @@
 }
 
 - (void)setPageWithQuest {
-    //AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    self.titleLabel.text = [NSString stringWithFormat:@"QUEST #"];
-    self.clueLabel1.text = [NSString stringWithFormat:@"Syalala"];
-    self.clueLabel2.text = [NSString stringWithFormat:@"Syalili"];
+    NSMutableDictionary *summary = [delegate.userModel.userData objectForKey:@"summary"];
+    int questCount = 1;
+    if (summary != nil) {
+        NSNumber *quests = [summary objectForKey:@"quests"];
+        if (quests != nil) {
+            questCount += [quests intValue];
+        }
+    }
+    
+    NSString *text = [[delegate.userModel.userData objectForKey:@"current_quest"] objectForKey:@"clue"];
+    NSString *text1 = @"";
+    NSString *text2 = @"";
+    NSString *text3 = @"";
+    NSString *text4 = @"";
+    
+    if (text.length <= 40) {
+        text1 = text;
+    } else if (text.length <= 80) {
+        text1 = [text substringToIndex:39];
+        text2 = [text substringFromIndex:40];
+    } else if (text.length <= 120) {
+        text1 = [text substringToIndex:39];
+        text2 = [text substringWithRange:NSMakeRange(40, 40)];
+        text3 = [text substringFromIndex:80];
+    } else if (text.length <= 160) {
+        text1 = [text substringToIndex:39];
+        text2 = [text substringWithRange:NSMakeRange(40, 40)];
+        text3 = [text substringWithRange:NSMakeRange(80, 40)];
+        text4 = [text substringFromIndex:120];
+    } else if (text.length > 160) {
+        text1 = [text substringToIndex:39];
+        text2 = [text substringWithRange:NSMakeRange(40, 40)];
+        text3 = [text substringWithRange:NSMakeRange(80, 40)];
+        text4 = [text substringWithRange:NSMakeRange(120, 40)];
+    }
+    
+    self.titleLabel.text = [NSString stringWithFormat:@"QUEST #%d", questCount];
+    self.clueLabel1.text = text1;
+    self.clueLabel2.text = text2;
+    self.clueLabel3.text = text3;
+    self.clueLabel4.text = text4;
 }
 
 /*
