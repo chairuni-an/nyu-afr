@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    SharedData *data =[SharedData sharedInstance];
+    
     UIButton *myLoginButton=[UIButton buttonWithType:UIButtonTypeCustom];
     myLoginButton.backgroundColor=[UIColor purpleColor];
     myLoginButton.frame=CGRectMake(0,0,180,40);
@@ -36,7 +36,7 @@
     
     // Add the button to the view
     [self.view addSubview:myLoginButton];
-    self.imageTest.image = [data shareImage];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,7 +47,7 @@
 -(void)loginButtonClicked
 {
     FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
- 
+    SharedData *data =[SharedData sharedInstance];
     [login logOut];  
     [login
      logInWithReadPermissions: @[@"public_profile"]
@@ -60,7 +60,7 @@
          } else {
              NSLog(@"Logged in");
              FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc] init];
-             content.imageURL = [NSURL URLWithString:@"https://i.vimeocdn.com/portrait/58832_300x300"];
+             content.imageURL = [data shareImage];
              [FBSDKShareDialog showFromViewController:self
                                           withContent:content
                                              delegate:nil];

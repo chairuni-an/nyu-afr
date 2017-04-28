@@ -212,7 +212,7 @@
  
     self.myImageView.image = img;
 
-    [data setShareImage:img];
+    [data setShareImage:_pictureDownloadURL];
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"My Alert"
                                                                    message:@"Share your achievement to Facebook?"
                                                             preferredStyle:UIAlertControllerStyleAlert];
