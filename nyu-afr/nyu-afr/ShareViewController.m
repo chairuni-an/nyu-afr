@@ -59,8 +59,12 @@
              NSLog(@"Cancelled");
          } else {
              NSLog(@"Logged in");
-             FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc] init];
-             content.imageURL = [data shareImage];
+
+             FBSDKSharePhoto *photo = [[FBSDKSharePhoto alloc] init];
+             photo.image =[data shareImage];
+             photo.userGenerated = YES;
+             FBSDKSharePhotoContent *content = [[FBSDKSharePhotoContent alloc] init];
+             content.photos = @[photo];
              [FBSDKShareDialog showFromViewController:self
                                           withContent:content
                                              delegate:nil];
