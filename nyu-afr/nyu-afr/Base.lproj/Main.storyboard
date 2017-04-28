@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -245,6 +245,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" id="Uzk-dJ-G8B"/>
+                    <navigationItem key="navigationItem" title="Map" id="bxI-TH-5zx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S3w-q3-4T2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -279,7 +280,7 @@
             </objects>
             <point key="canvasLocation" x="1704.8" y="1220.2398800599701"/>
         </scene>
-        <!--Check View Controller-->
+        <!--Check-->
         <scene sceneID="jR7-bO-cnj">
             <objects>
                 <viewController id="5nd-iy-See" customClass="CheckViewController" sceneMemberID="viewController">
@@ -329,7 +330,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="&gt;"/>
                                 <connections>
-                                    <segue destination="YJX-gO-0WK" kind="presentation" identifier="TableView" id="bN8-4p-ORa"/>
+                                    <segue destination="YJX-gO-0WK" kind="show" identifier="TableView" id="bN8-4p-ORa"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PjI-qn-DW5">
@@ -351,13 +352,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="cz3-Fk-QOd"/>
+                    <navigationItem key="navigationItem" title="Check" id="cz3-Fk-QOd"/>
                     <connections>
                         <outlet property="choosePlacenameButton" destination="km2-ew-NOa" id="bPw-w9-Uaa"/>
                         <outlet property="myImageView" destination="q3P-9O-7LR" id="PUF-8w-Nxi"/>
                         <outlet property="placenameLabel" destination="97b-k2-rbI" id="Z1q-vj-AvQ"/>
                         <outlet property="submitButton" destination="PjI-qn-DW5" id="Irc-3R-Gsb"/>
                         <segue destination="VLR-tx-1WK" kind="show" identifier="ShareView" id="7bF-19-s0X"/>
+                        <segue destination="blf-NF-CUe" kind="show" identifier="NewQuest" id="Zjh-BK-nfu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ND-Q0-396" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -388,7 +390,7 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <segue destination="5nd-iy-See" kind="presentation" identifier="CheckView" id="3Kl-DA-iFw"/>
+                        <segue destination="5nd-iy-See" kind="show" identifier="CheckView" id="3Kl-DA-iFw"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lpe-rc-o2n" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -593,21 +595,21 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Line #1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ovu-pb-9mQ">
                                 <rect key="frame" x="16" y="191" width="343" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Line #2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSm-Dw-tO1">
                                 <rect key="frame" x="16" y="220" width="343" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Line #3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LfT-jp-hnC">
                                 <rect key="frame" x="16" y="249" width="343" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -621,7 +623,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Line #4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v44-yM-xrW">
                                 <rect key="frame" x="16" y="278" width="343" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -629,6 +631,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Quest" id="RP6-HM-JrX"/>
+                    <navigationItem key="navigationItem" title="Quest" id="aYl-9N-ieO"/>
                     <connections>
                         <outlet property="clueLabel1" destination="ovu-pb-9mQ" id="Rau-Yv-4d3"/>
                         <outlet property="clueLabel2" destination="rSm-Dw-tO1" id="sa6-Zo-eGK"/>
@@ -668,7 +671,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DEV-2L-fei" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Menu" id="gwV-nq-fLZ"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="G4K-5y-84D">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="G4K-5y-84D">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -687,7 +690,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="djt-Ul-6rS" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Check" id="54e-VT-WHt"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hWK-mF-b3b">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="hWK-mF-b3b">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -706,5 +709,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="3Kl-DA-iFw"/>
+        <segue reference="Zjh-BK-nfu"/>
     </inferredMetricsTieBreakers>
 </document>
