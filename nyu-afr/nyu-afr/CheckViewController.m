@@ -28,6 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.navigationItem setHidesBackButton:YES];
     [self.myImageView setImage:[UIImage imageNamed:@"placeholder"]];
     self.isImageChosen = false;
     // Do any additional setup after loading the view.
@@ -76,6 +77,14 @@
     
     if (self.isImageChosen && self.placeID != nil && self.placename != nil) {
         [self submitAnswer];
+    }else{
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Oops!"
+                                                                       message:@"Please also add a photo of proof before you submit your answer!"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* noAction = [UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction * action) {}];
+        [alert addAction:noAction];
+        [self presentViewController:alert animated:YES completion:nil];
     }
 }
 
@@ -104,6 +113,51 @@
                                                           
                                                       }
                                                   }];
+        
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Congratulations!"
+                                                                       message:@"You found the right location! Would you like to share your achievement to Facebook?"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* yesAction = [UIAlertAction actionWithTitle:@"Yes!" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {
+                                                              [self performSegueWithIdentifier:@"ShareView" sender:nil];
+                                                              [alert dismissViewControllerAnimated:TRUE completion:nil];   }];
+        UIAlertAction* noAction = [UIAlertAction actionWithTitle:@"No Thanks" style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction * action) {
+                                                         
+                                                             UIAlertController* newAlert = [UIAlertController alertControllerWithTitle:@"Congratulations!"
+                                                                                                                               message:@"Would you like to start a new quest?"
+                                                                                                                        preferredStyle:UIAlertControllerStyleAlert];
+                                                             
+                                                             UIAlertAction* newQuest = [UIAlertAction actionWithTitle:@"Yes!" style:UIAlertActionStyleDefault
+                                                                             handler:^(UIAlertAction * action) {
+                                                                        [self performSegueWithIdentifier:@"NewQuest" sender:nil];
+                                                                                                    [alert dismissViewControllerAnimated:TRUE completion:nil];   }];
+                                                             
+                                                             UIAlertAction* noNewQuest = [UIAlertAction actionWithTitle:@"No Thanks" style:UIAlertActionStyleDefault
+                                                                        handler:^(UIAlertAction * action) {}];
+                                                             
+                                                             [newAlert addAction:newQuest];
+                                                             [newAlert addAction:noNewQuest];
+                                                             [self presentViewController: newAlert animated:YES completion:nil];
+                                                         
+                                                         
+                                                         }];
+        
+        [alert addAction:yesAction];
+        [alert addAction:noAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }else{
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Sorry!"
+                                                                       message:@"You're not at the right location"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* noAction = [UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction * action) {
+  
+                                                         }];
+        [alert addAction:noAction];
+        [self presentViewController:alert animated:YES completion:nil];
+        
     }
 }
 
@@ -219,24 +273,11 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     SharedData *data =[SharedData sharedInstance];
     UIImage * img = [info valueForKey:UIImagePickerControllerOriginalImage]; // you can change it to edited image
- 
-    self.myImageView.image = img;
-
     [data setShareImage:img];
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"My Alert"
-                                                                   message:@"Share your achievement to Facebook?"
-                                                            preferredStyle:UIAlertControllerStyleAlert];
+    self.myImageView.image = [data shareImage];
+
     
-    UIAlertAction* yesAction = [UIAlertAction actionWithTitle:@"Yes!" style:UIAlertActionStyleDefault
-                                                      handler:^(UIAlertAction * action) {
-                                                          [self performSegueWithIdentifier:@"ShareView" sender:nil];
-                                                          [alert dismissViewControllerAnimated:TRUE completion:nil];   }];
-    UIAlertAction* noAction = [UIAlertAction actionWithTitle:@"No Thanks" style:UIAlertActionStyleDefault
-                                                     handler:^(UIAlertAction * action) {}];
-    
-    [alert addAction:yesAction];
-    [alert addAction:noAction];
-    [self presentViewController:alert animated:YES completion:nil];
+
 }
 
 /*
