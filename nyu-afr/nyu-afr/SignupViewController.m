@@ -26,24 +26,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.errorLabel.text = @"";
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (BOOL)isEmailAddressFilled {
-    return self.emailAddressTF.text && self.emailAddressTF.text.length > 0;
+    return self.emailAddressTF.text && (self.emailAddressTF.text.length > 0);
 }
 
 - (BOOL)isPasswordFilled {
-    return self.passwordTF.text && self.passwordTF.text.length > 0;
+    return self.passwordTF.text && (self.passwordTF.text.length > 0);
 }
 
 - (BOOL)isVerifyPasswordFilled {
-    return self.verifyPasswordTF.text && self.verifyPasswordTF.text.length > 0;
+    return self.verifyPasswordTF.text && (self.verifyPasswordTF.text.length > 0);
 }
 
 - (BOOL)isEveryFieldFilled {
@@ -66,7 +64,7 @@
 
 - (void)gotoMainTabBar {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UITabBarController *vc = (MainTabBarController *)[storyboard instantiateViewControllerWithIdentifier:@"MainTabBarController"];
+    UITabBarController *vc = (MainTabBarController *) [storyboard instantiateViewControllerWithIdentifier:@"MainTabBarController"];
     [self presentViewController:vc animated:YES completion:nil];
 }
 
@@ -80,7 +78,7 @@
                     self.errorLabel.text = @"Hmm, password and verify password doesn't match";
                 }
             } else {
-                self.errorLabel.text = @"Password is weak, make it at least 6 charactes";
+                self.errorLabel.text = @"Password is weak, make it at least 6 characters";
             }
         } else {
             self.errorLabel.text = @"Uh oh, double check your email address";
@@ -94,36 +92,19 @@
     [[FIRAuth auth]
      createUserWithEmail:self.emailAddressTF.text
      password:self.passwordTF.text
-     completion:^(FIRUser *_Nullable user,
-                  NSError *_Nullable error) {
+     completion:^(FIRUser *_Nullable user, NSError *_Nullable error) {
          if (!error) {
              AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-             
-             [[[delegate.ref child:@"users"] child:user.uid] setValue:@{@"status": @"NO_ACTIVE_QUEST"}];
-             
+             [[[delegate.ref child:@"users"] child:user.uid] setValue:@{@"status" : @"NO_ACTIVE_QUEST"}];
              delegate.userModel = [[UserModel alloc] init];
+             delegate.userModel.userData = [[NSMutableDictionary alloc] init];
              [delegate.userModel.userData setObject:@"NO_ACTIVE_QUEST" forKey:@"status"];
-             if (user.displayName != nil) {
-                 [delegate.userModel.userData setObject: user.displayName forKey: @"display_name"];
-             }
-             [delegate.userModel.userData setObject: self.emailAddressTF.text forKey: @"email"];
-             
+             [delegate.userModel.userData setObject:self.emailAddressTF.text forKey:@"email"];
              [self gotoMainTabBar];
          } else {
              self.errorLabel.text = @"Cannot sign up, please contact our customer service";
-             //TODO handle the errors
          }
      }];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

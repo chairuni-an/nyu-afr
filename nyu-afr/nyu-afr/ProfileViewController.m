@@ -25,6 +25,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Edit" style:UIBarButtonItemStyleDone target:nil action:nil];
+    
+    NSLog(@"-----%@", self.tabBarController.navigationItem.rightBarButtonItem);
+    NSLog(@"-----%@", self.tabBarController.navigationItem.leftBarButtonItem);
+    NSLog(@"-----%@", self.tabBarController.navigationItem.backBarButtonItem);
+    NSLog(@"-----%@", self.tabBarController.navigationItem);
+    NSLog(@"-----%@", self.tabBarController);
+
+    //self.tabBarController.navigationItem.rightBarButtonItem = myButton;
+    
     UIImage *image = [UIImage imageNamed: @"imageplaceholder.png"];
     _profileImage.layer.cornerRadius = _profileImage.frame.size.height /2;
     _profileImage.layer.masksToBounds = YES;
