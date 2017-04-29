@@ -26,12 +26,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.errorLabel.text = @"";
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (BOOL)isEmailAddressFilled {
@@ -54,29 +52,35 @@
 
 - (void)gotoMainTabBar {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UITabBarController *vc = (MainTabBarController *)[storyboard instantiateViewControllerWithIdentifier:@"MainTabBarController"];
+    UITabBarController *vc = (MainTabBarController *) [storyboard instantiateViewControllerWithIdentifier:@"MainTabBarController"];
     [self presentViewController:vc animated:YES completion:nil];
 }
 
 - (void)login {
-    [[FIRAuth auth] signInWithEmail:self.emailAddressTF.text
-                           password:self.passwordTF.text
-                         completion:^(FIRUser *user, NSError *error) {
-                             if (!error) {
-                                 AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-                                 
-                                 [[[delegate.ref child:@"users"] child:user.uid] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
-                                     delegate.userModel = [[UserModel alloc] initWithUserData:snapshot.value];
-                                     [self gotoMainTabBar];
-                                     
-                                 } withCancelBlock:^(NSError * _Nonnull error) {
-                                     NSLog(@"%@", error.localizedDescription);
-                                 }];
-
-                             } else {
-                                 self.errorLabel.text = @"Incorrect email or password";
-                             }
-                         }];
+    [[FIRAuth auth]
+     signInWithEmail:self.emailAddressTF.text
+     password:self.passwordTF.text
+     completion:^(FIRUser *user, NSError *error) {
+        if (!error) {
+            AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+            [[[delegate.ref
+               child:@"users"]
+              child:user.uid]
+             observeSingleEventOfType:FIRDataEventTypeValue
+             withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+                delegate.userModel = [[UserModel alloc] initWithUserData:snapshot.value];
+                if (user.displayName != nil) {
+                    [delegate.userModel.userData setObject:user.displayName forKey:@"display_name"];
+                }
+                [delegate.userModel.userData setObject:self.emailAddressTF.text forKey:@"email"];
+                [self gotoMainTabBar];
+            } withCancelBlock:^(NSError * _Nonnull error) {
+                NSLog(@"%@", error.localizedDescription);
+            }];
+        } else {
+            self.errorLabel.text = @"Incorrect email or password";
+        }
+    }];
 }
 
 - (IBAction)loginClicked:(id)sender {
@@ -90,17 +94,5 @@
         self.errorLabel.text = @"Oops, make sure you have filled all fields";
     }
 }
-
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
