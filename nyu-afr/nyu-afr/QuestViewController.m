@@ -56,7 +56,9 @@
     if ([[delegate.userModel.userData objectForKey:@"status"] isEqualToString:@"NO_ACTIVE_QUEST"]) {
         [self startNewQuest];
     } else if ([[delegate.userModel.userData objectForKey:@"status"] isEqualToString:@"QUEST_IN_PROGRESS"]) {
-        [self goToMap];
+        [self.tabBarController setSelectedIndex:1];
+        //[alert dismissViewControllerAnimated:TRUE completion:nil];
+        //[self goToMap];
     }
 
 }

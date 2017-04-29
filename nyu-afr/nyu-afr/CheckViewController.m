@@ -131,7 +131,7 @@
                                                              
                                                              UIAlertAction* newQuest = [UIAlertAction actionWithTitle:@"Yes!" style:UIAlertActionStyleDefault
                                                                              handler:^(UIAlertAction * action) {
-                                                                        [self performSegueWithIdentifier:@"NewQuest" sender:nil];
+                                                                                 [self.tabBarController setSelectedIndex:0];
                                                                                                     [alert dismissViewControllerAnimated:TRUE completion:nil];   }];
                                                              
                                                              UIAlertAction* noNewQuest = [UIAlertAction actionWithTitle:@"No Thanks" style:UIAlertActionStyleDefault

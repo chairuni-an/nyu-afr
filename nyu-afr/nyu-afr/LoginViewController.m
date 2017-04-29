@@ -71,6 +71,7 @@
                                          [delegate.userModel.userData setObject: user.displayName forKey: @"display_name"];
                                      }
                                      [delegate.userModel.userData setObject: self.emailAddressTF.text forKey: @"email"];
+                                     NSLog(@"-----%@", delegate.userModel.userData);
                                      [self gotoMainTabBar];
                                      
                                  } withCancelBlock:^(NSError * _Nonnull error) {

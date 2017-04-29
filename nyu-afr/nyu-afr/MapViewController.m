@@ -65,19 +65,19 @@
         // Creates markers in the "possible places"
         self.marker1 = [[GMSMarker alloc] init];
         self.marker1.position = CLLocationCoordinate2DMake([[[delegate.userModel.userData objectForKey:@"current_quest"] objectForKey:@"latitude"] doubleValue], [[[delegate.userModel.userData objectForKey:@"current_quest"] objectForKey:@"longitude"] doubleValue]);
-        //self.marker1.title = [delegate.currentQuest objectForKey:@"placename"];
+        self.marker1.title = @"?";
         self.marker1.snippet = [[delegate.userModel.userData objectForKey:@"current_quest"] objectForKey:@"street_address"];
         self.marker1.map = self.mapView;
         
         self.marker2 = [[GMSMarker alloc] init];
         self.marker2.position = CLLocationCoordinate2DMake([[[delegate.userModel.userData objectForKey:@"deception_quest1"] objectForKey:@"latitude"] doubleValue], [[[delegate.userModel.userData objectForKey:@"deception_quest1"] objectForKey:@"longitude"] doubleValue]);
-        //self.marker2.title = [delegate.deceptionQuest1 objectForKey:@"placename"];
+        self.marker2.title = @"?";
         self.marker2.snippet = [[delegate.userModel.userData objectForKey:@"deception_quest1"] objectForKey:@"street_address"];
         self.marker2.map = self.mapView;
         
         self.marker3 = [[GMSMarker alloc] init];
         self.marker3.position = CLLocationCoordinate2DMake([[[delegate.userModel.userData objectForKey:@"deception_quest2"] objectForKey:@"latitude"] doubleValue], [[[delegate.userModel.userData objectForKey:@"deception_quest2"] objectForKey:@"longitude"] doubleValue]);
-        //self.marker3.title = [delegate.deceptionQuest2 objectForKey:@"placename"];
+        self.marker3.title = @"?";
         self.marker3.snippet = [[delegate.userModel.userData objectForKey:@"deception_quest2"] objectForKey:@"street_address"];
         self.marker3.map = self.mapView;
     }

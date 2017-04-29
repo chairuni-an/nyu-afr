@@ -100,13 +100,38 @@
              AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
              
              [[[delegate.ref child:@"users"] child:user.uid] setValue:@{@"status": @"NO_ACTIVE_QUEST"}];
+             delegate.userModel = [[UserModel alloc] init];
+             delegate.userModel.userData = [[NSMutableDictionary alloc] init];
+             [delegate.userModel.userData setObject:@"NO_ACTIVE_QUEST" forKey:@"status"];
+             
+             [delegate.userModel.userData setObject: self.emailAddressTF.text forKey: @"email"];
+             
+             NSLog(@"-----%@", delegate.userModel.userData);
+             
+             
+             /*[[[delegate.ref child:@"users"] child:user.uid] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+                 delegate.userModel = [[UserModel alloc] initWithUserData:snapshot.value];
+                 if (user.displayName != nil) {
+                     [delegate.userModel.userData setObject: user.displayName forKey: @"display_name"];
+                 }
+                 [delegate.userModel.userData setObject: self.emailAddressTF.text forKey: @"email"];
+                 [self gotoMainTabBar];
+                 
+             } withCancelBlock:^(NSError * _Nonnull error) {
+                 NSLog(@"%@", error.localizedDescription);
+             }];*/
+             
+             
+             /*AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+             
+             [[[delegate.ref child:@"users"] child:user.uid] setValue:@{@"status": @"NO_ACTIVE_QUEST"}];
              
              delegate.userModel = [[UserModel alloc] init];
              [delegate.userModel.userData setObject:@"NO_ACTIVE_QUEST" forKey:@"status"];
              if (user.displayName != nil) {
                  [delegate.userModel.userData setObject: user.displayName forKey: @"display_name"];
              }
-             [delegate.userModel.userData setObject: self.emailAddressTF.text forKey: @"email"];
+             [delegate.userModel.userData setObject: self.emailAddressTF.text forKey: @"email"];*/
              
              [self gotoMainTabBar];
          } else {
