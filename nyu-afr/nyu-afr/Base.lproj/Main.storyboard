@@ -648,7 +648,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOt-N9-XwK">
                                 <rect key="frame" x="114" y="353" width="186" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Update Profile Picture"/>
+                                <state key="normal" title="Update Profile"/>
                                 <connections>
                                     <action selector="editProfileButtonTapped:" destination="QnG-U0-w9p" eventType="touchUpInside" id="XEi-Py-DiT"/>
                                 </connections>
