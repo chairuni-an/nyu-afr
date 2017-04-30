@@ -240,7 +240,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" id="Uzk-dJ-G8B"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="map" id="Uzk-dJ-G8B"/>
                     <navigationItem key="navigationItem" title="Map" id="bxI-TH-5zx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S3w-q3-4T2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -602,9 +602,12 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lzb-QW-7tB">
-                                <rect key="frame" x="172" y="484" width="71" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lzb-QW-7tB">
+                                <rect key="frame" x="172" y="247" width="71" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="1sx-aq-ZMM"/>
+                                    <constraint firstAttribute="width" constant="71" id="Dzj-xJ-SGI"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
                                 <state key="normal" title="Edit Profile">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -629,8 +632,11 @@
                             <constraint firstItem="f7b-ES-XLp" firstAttribute="centerX" secondItem="NAT-Zn-2Ug" secondAttribute="centerX" id="4wl-NU-lID"/>
                             <constraint firstItem="f7b-ES-XLp" firstAttribute="top" secondItem="ZEf-dH-uJG" secondAttribute="bottom" constant="44" id="5I6-aJ-Npt"/>
                             <constraint firstItem="fNV-qJ-P0U" firstAttribute="centerY" secondItem="NAT-Zn-2Ug" secondAttribute="centerY" id="TNI-ao-au7"/>
+                            <constraint firstItem="Lzb-QW-7tB" firstAttribute="top" secondItem="f7b-ES-XLp" secondAttribute="bottom" constant="8" id="dCB-y6-h9e"/>
                             <constraint firstItem="f7b-ES-XLp" firstAttribute="centerX" secondItem="NAT-Zn-2Ug" secondAttribute="centerX" id="qxa-9j-hzv"/>
                             <constraint firstItem="fNV-qJ-P0U" firstAttribute="centerX" secondItem="NAT-Zn-2Ug" secondAttribute="centerX" id="sVg-2e-Kz7"/>
+                            <constraint firstItem="Lzb-QW-7tB" firstAttribute="centerX" secondItem="NAT-Zn-2Ug" secondAttribute="centerX" id="ypt-mG-dag"/>
+                            <constraint firstItem="Lzb-QW-7tB" firstAttribute="top" secondItem="f7b-ES-XLp" secondAttribute="bottom" constant="8" id="ztm-Kp-JQh"/>
                         </constraints>
                     </view>
                     <connections>
@@ -659,12 +665,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ta3-SW-N4J">
-                                <rect key="frame" x="164" y="72" width="200" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Ta3-SW-N4J">
+                                <rect key="frame" x="124" y="84" width="246" height="64"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Display Name" borderStyle="roundedRect" placeholder="Display Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tPr-fd-zkp">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Display Name" borderStyle="roundedRect" placeholder="Display Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tPr-fd-zkp">
+                                        <rect key="frame" x="0.0" y="0.0" width="246" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="R1D-1e-u7y"/>
                                         </constraints>
@@ -672,8 +677,8 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email Address" borderStyle="roundedRect" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="25N-U3-jmg">
-                                        <rect key="frame" x="0.0" y="30" width="200" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email Address" borderStyle="roundedRect" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="25N-U3-jmg">
+                                        <rect key="frame" x="0.0" y="34" width="246" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="f3x-IO-dLo"/>
                                         </constraints>
@@ -683,35 +688,66 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOt-N9-XwK">
-                                <rect key="frame" x="114" y="353" width="186" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Update Profile"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOt-N9-XwK">
+                                <rect key="frame" x="20" y="353" width="374" height="30"/>
+                                <color key="backgroundColor" red="0.5095984935760498" green="0.16210284829139709" blue="0.74433088302612305" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Update Profile">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="editProfileButtonTapped:" destination="QnG-U0-w9p" eventType="touchUpInside" id="XEi-Py-DiT"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YhF-ve-U4W">
-                                <rect key="frame" x="60" y="72" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iW1-fs-pei">
-                                <rect key="frame" x="60" y="127" width="60" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title="Edit Photo"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1gL-9e-mFK">
+                                <rect key="frame" x="44" y="84" width="60" height="87"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YhF-ve-U4W">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="Dhi-id-PBM"/>
+                                            <constraint firstAttribute="width" constant="60" id="OB3-14-kJ2"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iW1-fs-pei">
+                                        <rect key="frame" x="0.0" y="60" width="60" height="27"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="Edit Photo"/>
+                                        <connections>
+                                            <action selector="editPhotoTapped:" destination="QnG-U0-w9p" eventType="touchUpInside" id="ZHC-Qo-VXU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qS-D9-LZo">
+                                <rect key="frame" x="180" y="637" width="55" height="30"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" red="0.33990722894668579" green="0.020168853923678398" blue="0.54998618364334106" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
-                                    <action selector="editPhotoTapped:" destination="QnG-U0-w9p" eventType="touchUpInside" id="ZHC-Qo-VXU"/>
+                                    <action selector="logout:" destination="QnG-U0-w9p" eventType="touchUpInside" id="PhM-ho-RWI"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ta3-SW-N4J" firstAttribute="leading" secondItem="1gL-9e-mFK" secondAttribute="trailing" constant="20" id="CTC-3e-AeQ"/>
+                            <constraint firstItem="eOt-N9-XwK" firstAttribute="centerY" secondItem="AZY-Kl-q0r" secondAttribute="centerY" id="Ccs-Nv-88F"/>
+                            <constraint firstItem="Ta3-SW-N4J" firstAttribute="top" secondItem="5FF-TZ-tAz" secondAttribute="bottom" constant="20" id="K2q-y7-srm"/>
+                            <constraint firstItem="eOt-N9-XwK" firstAttribute="leading" secondItem="AZY-Kl-q0r" secondAttribute="leadingMargin" id="bIN-Ki-qKx"/>
+                            <constraint firstItem="3qS-D9-LZo" firstAttribute="centerX" secondItem="AZY-Kl-q0r" secondAttribute="centerX" id="fJZ-Zh-Dn0"/>
+                            <constraint firstItem="1gL-9e-mFK" firstAttribute="top" secondItem="5FF-TZ-tAz" secondAttribute="bottom" constant="20" id="lUW-jU-b4b"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ta3-SW-N4J" secondAttribute="trailing" constant="24" id="uCg-s3-Q3J"/>
+                            <constraint firstItem="HXg-eq-PZr" firstAttribute="top" secondItem="3qS-D9-LZo" secondAttribute="bottom" constant="20" id="uZG-kQ-aJP"/>
+                            <constraint firstItem="1gL-9e-mFK" firstAttribute="leading" secondItem="AZY-Kl-q0r" secondAttribute="leadingMargin" constant="24" id="z08-3I-eLt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eOt-N9-XwK" secondAttribute="trailing" id="zXQ-tv-hB7"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Profile" id="ZTD-uR-bGU"/>
                     <connections>
                         <outlet property="displayNameField" destination="tPr-fd-zkp" id="unP-dZ-O5h"/>
                         <outlet property="emailAddressField" destination="25N-U3-jmg" id="fVA-j6-ESK"/>
                         <outlet property="profileImage" destination="YhF-ve-U4W" id="3HO-h6-0y0"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToLogin" id="vvk-dU-aaX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OnN-f2-9Uj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -934,7 +970,7 @@
                             <constraint firstAttribute="trailing" secondItem="wmk-iu-9BX" secondAttribute="trailing" constant="16" id="tjU-yU-xtD"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Quest" id="RP6-HM-JrX"/>
+                    <tabBarItem key="tabBarItem" title="Quest" image="quest" id="RP6-HM-JrX"/>
                     <navigationItem key="navigationItem" title="Quest" id="aYl-9N-ieO"/>
                     <connections>
                         <outlet property="clueLabel1" destination="ovu-pb-9mQ" id="Rau-Yv-4d3"/>
@@ -970,7 +1006,7 @@
         <scene sceneID="L7m-9B-gMK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DEV-2L-fei" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Menu" id="gwV-nq-fLZ"/>
+                    <tabBarItem key="tabBarItem" title="Menu" image="menu" id="gwV-nq-fLZ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="G4K-5y-84D">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -989,7 +1025,7 @@
         <scene sceneID="QYq-5w-Uza">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="djt-Ul-6rS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Check" id="54e-VT-WHt"/>
+                    <tabBarItem key="tabBarItem" title="Check" image="check" id="54e-VT-WHt"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="hWK-mF-b3b">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1008,10 +1044,16 @@
     <resources>
         <image name="NYUAFR2.png" width="1024" height="1024"/>
         <image name="camera" width="50" height="50"/>
+        <image name="check" width="25" height="25"/>
         <image name="library" width="50" height="50"/>
+        <image name="map" width="25" height="25"/>
+        <image name="menu" width="25" height="25"/>
+        <image name="quest" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="WMh-tQ-CUs"/>
         <segue reference="UYv-Kz-2kc"/>
+        <segue reference="vvk-dU-aaX"/>
         <segue reference="Zjh-BK-nfu"/>
     </inferredMetricsTieBreakers>
 </document>
