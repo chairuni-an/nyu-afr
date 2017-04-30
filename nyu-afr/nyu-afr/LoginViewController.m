@@ -72,6 +72,14 @@
                 if (user.displayName != nil) {
                     [delegate.userModel.userData setObject:user.displayName forKey:@"display_name"];
                 }
+                if (user.photoURL != nil) {
+                    NSLog(@"----- photoURL exist");
+                    [delegate.userModel.userData setObject:user.photoURL.absoluteString forKey:@"photo_url"];
+                    //NSLog(@"----- photoURL is nil!!!");
+                } else {
+                    NSLog(@"----- photoURL is nil!!!");
+                }
+                
                 [delegate.userModel.userData setObject:self.emailAddressTF.text forKey:@"email"];
                 [self gotoMainTabBar];
             } withCancelBlock:^(NSError * _Nonnull error) {
