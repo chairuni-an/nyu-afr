@@ -172,8 +172,14 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    SharedData *data =[SharedData sharedInstance];
-    self.placenameLabel.text =[data pickedLocation];
+    SharedData *data = [SharedData sharedInstance];
+    if ([data pickedLocation] != nil) {
+        self.placenameLabel.text = [data pickedLocation];
+        self.placenameLabel.textColor = [UIColor blackColor];
+    } else {
+        self.placenameLabel.text = @"Placename";
+        self.placenameLabel.textColor = [UIColor colorWithRed: (CGFloat) 155 / (CGFloat)255 green: (CGFloat) 155 / (CGFloat) 255 blue: (CGFloat) 155 / (CGFloat) 255 alpha:1];
+    }
 }
 
 - (void)uploadData {
