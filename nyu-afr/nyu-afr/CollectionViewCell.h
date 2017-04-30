@@ -10,6 +10,8 @@
 
 @interface CollectionViewCell : UICollectionViewCell
 @property (strong, nonatomic) IBOutlet UIImageView *badgeDisplay;
-@property (strong, nonatomic) IBOutlet UILabel *test;
+
+@property (strong, nonatomic) IBOutlet UILabel *level;
+@property (strong, nonatomic) IBOutlet UILabel *typeDisplay;
 
 @end
