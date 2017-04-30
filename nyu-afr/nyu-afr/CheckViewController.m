@@ -275,9 +275,6 @@
     UIImage * img = [info valueForKey:UIImagePickerControllerOriginalImage]; // you can change it to edited image
     [data setShareImage:img];
     self.myImageView.image = [data shareImage];
-
-    
-
 }
 
 /*

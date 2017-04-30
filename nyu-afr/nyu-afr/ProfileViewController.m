@@ -10,7 +10,7 @@
 #import "AppDelegate.h"
 @import Firebase;
 
-@interface ProfileViewController ()
+@interface ProfileViewController () <UIImagePickerControllerDelegate>
 @property (strong, nonatomic) IBOutlet UIImageView *profileImage;
 @property (strong, nonatomic) IBOutlet UIButton *editProfile;
 @property (weak, nonatomic) IBOutlet UILabel *displayNameLabel;
@@ -36,14 +36,34 @@
 
     //self.tabBarController.navigationItem.rightBarButtonItem = myButton;
     
-    UIImage *image = [UIImage imageNamed: @"imageplaceholder.png"];
-    _profileImage.layer.cornerRadius = _profileImage.frame.size.height /2;
-    _profileImage.layer.masksToBounds = YES;
-    _profileImage.layer.borderWidth = 0;
-    [_profileImage setImage:image];
-    [_editProfile.layer setBorderColor:[[UIColor grayColor] CGColor]];
     
+    
+    // Do any additional setup after loading the view.
+    
+    
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    self.profileImage.layer.cornerRadius = _profileImage.frame.size.height /2;
+    self.profileImage.layer.masksToBounds = YES;
+    self.profileImage.layer.borderWidth = 0;
+    if ([delegate.userModel.userData objectForKey:@"photo_url"] != nil) {
+        NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: [delegate.userModel.userData objectForKey:@"photo_url"]]];
+        if ([UIImage imageWithData: imageData] != nil) {
+            self.profileImage.image = [UIImage imageWithData: imageData];
+        } else {
+            UIImage *image = [UIImage imageNamed: @"imageplaceholder.png"];
+            [self.profileImage setImage:image];
+        }
+    } else {
+        UIImage *image = [UIImage imageNamed: @"imageplaceholder.png"];
+        [self.profileImage setImage:image];
+    }
+    
     NSMutableDictionary *summary = [delegate.userModel.userData objectForKey:@"summary"];
     int questsCount = 0;
     int goldsCount = 0;
@@ -75,19 +95,12 @@
     
     
     if ([delegate.userModel.userData objectForKey:@"display_name"] != nil) {
-        NSLog(@"-----Not Nil");
         self.displayNameLabel.text = [delegate.userModel.userData objectForKey:@"display_name"];
         self.displayNameLabel.textColor = [UIColor blackColor];
     } else {
-        NSLog(@"-----No display name yet");
         self.displayNameLabel.text = @"No Name";
         self.displayNameLabel.textColor = [UIColor colorWithRed: (CGFloat) 155 / (CGFloat)255 green: (CGFloat) 155 / (CGFloat) 255 blue: (CGFloat) 155 / (CGFloat) 255 alpha:1];
     }
-    
-    // Do any additional setup after loading the view.
-    
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
