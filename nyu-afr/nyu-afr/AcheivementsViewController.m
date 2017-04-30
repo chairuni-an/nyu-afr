@@ -17,14 +17,22 @@
 @property (strong, nonatomic) IBOutlet UILabel *badgeCheck;
 @property (strong, nonatomic) FIRDatabaseReference *ref;
 @property (strong, nonatomic) FIRDatabaseReference *refBadges;
+@property (strong, nonatomic) FIRDatabaseReference *refCategories;
+
 @property (strong, nonatomic) NSDictionary *achievements;
 @property (strong, nonatomic) NSDictionary *badges;
 @property (strong, nonatomic) NSDictionary *badgesDatabase;
+@property (strong, nonatomic) NSDictionary *categoriesDatabase;
 @property (nonatomic, assign) BOOL hasBadges;
 @property (strong, nonatomic) NSMutableArray *tempArray;
 @property (strong, nonatomic) NSMutableArray *tempArray2;
+@property (strong, nonatomic) NSMutableArray *tempArray3;
 
 @property (strong, nonatomic) NSMutableArray *badgeURLArray;
+@property (strong, nonatomic) NSMutableArray *badgeLevelArray;
+@property (strong, nonatomic) NSMutableArray *categoryArray;
+@property (strong, nonatomic) NSMutableArray *typeArray;
+
 @property (strong, nonatomic) IBOutlet UICollectionView *myCollectionView;
 
 
@@ -44,9 +52,14 @@
     FIRUser *user = [FIRAuth auth].currentUser;
     _tempArray =  [[NSMutableArray alloc] init];
     _tempArray2 =  [[NSMutableArray alloc] init];
+    _tempArray3 =  [[NSMutableArray alloc] init];
     _badgeURLArray =  [[NSMutableArray alloc] init];
+    _badgeLevelArray =  [[NSMutableArray alloc] init];
+    _categoryArray =  [[NSMutableArray alloc] init];
+    _typeArray =  [[NSMutableArray alloc] init];
     self.ref = [[FIRDatabase database] reference];
     self.refBadges = [[FIRDatabase database] reference];
+    self.refCategories = [[FIRDatabase database] reference];
     
     [[[_ref child:@"users"] child: user.uid ]  observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
         // Get user value
@@ -100,6 +113,20 @@
         }];
         
     
+    [[_refBadges child:@"quest_categories"]  observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+        // Get user value
+        _categoriesDatabase = snapshot.value;
+        // ...
+        
+        
+        for(NSString *key in _categoriesDatabase){
+            [_tempArray3 addObject: key];
+            
+        }
+        
+    } withCancelBlock:^(NSError * _Nonnull error) {
+        NSLog(@"%@", error.localizedDescription);
+    }];
 
     
 
@@ -120,6 +147,8 @@
             {
                 NSLog(@"Compare");
                 [_badgeURLArray addObject: [[_badgesDatabase objectForKey:strComapre] objectForKey:@"trophy_picture_url"]];
+                [_badgeLevelArray addObject: [[_badgesDatabase objectForKey:strComapre] objectForKey:@"type"]];
+                [_categoryArray addObject: [[_badgesDatabase objectForKey:strComapre] objectForKey:@"category"]];
                 
             }
             else
@@ -127,10 +156,31 @@
                 NSLog(@"Not Compare");
             }
             
+            
+            
         }
-        NSLog(@"%@", _badgeURLArray);
         
-        //[_imageTest setImage: [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[_badgeURLArray objectAtIndex:0]]]]];
+        for (NSString *strComapre in _categoryArray)
+        {
+            NSLog(@"%@",strComapre);
+            if ([_tempArray3 containsObject:strComapre])
+            {
+                NSLog(@"Compare");
+                [_typeArray addObject: [[_categoriesDatabase objectForKey:strComapre] objectForKey:@"title"]];
+             
+                
+            }
+            else
+            {
+                NSLog(@"Not Compare");
+            }
+            
+            
+            
+        }
+  
+        
+       
     }else{
         _badgeCheck.text = @"Sorry you haven't earned any badges :(";
     }
@@ -151,6 +201,8 @@
     cell.layer.borderWidth=1.0f;
     cell.layer.borderColor=[UIColor purpleColor].CGColor;
     cell.badgeDisplay.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[_badgeURLArray objectAtIndex:indexPath.row]]]];
+    cell.level.text = [_badgeLevelArray objectAtIndex:indexPath.row];
+    cell.typeDisplay.text = [_typeArray objectAtIndex:indexPath.row];
     
     
     return cell;
