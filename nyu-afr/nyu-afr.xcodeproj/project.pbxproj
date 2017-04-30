@@ -40,6 +40,8 @@
 		C7A1E5961EB004A5005255B3 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7A1E5941EB004A5005255B3 /* FBSDKLoginKit.framework */; };
 		C7A1E5981EB004B2005255B3 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7A1E5971EB004B2005255B3 /* FBSDKShareKit.framework */; };
 		C7A1E59A1EB006C7005255B3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7A1E5991EB006C7005255B3 /* Default-568h@2x.png */; };
+		C7F2C52B1EB65CE1000C623E /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F2C52A1EB65CE1000C623E /* CollectionViewCell.m */; };
+		C7F2C52E1EB6712F000C623E /* QuestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F2C52D1EB6712F000C623E /* QuestTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +113,10 @@
 		C7A1E5941EB004A5005255B3 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		C7A1E5971EB004B2005255B3 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		C7A1E5991EB006C7005255B3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		C7F2C5291EB65CE1000C623E /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		C7F2C52A1EB65CE1000C623E /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		C7F2C52C1EB6712F000C623E /* QuestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestTableViewController.h; sourceTree = "<group>"; };
+		C7F2C52D1EB6712F000C623E /* QuestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestTableViewController.m; sourceTree = "<group>"; };
 		CB78F2E28D1984777076E879 /* Pods-nyu-afrTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyu-afrTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-nyu-afrTests/Pods-nyu-afrTests.release.xcconfig"; sourceTree = "<group>"; };
 		CD2937EB9C26C54CF66D5DE5 /* Pods-nyu-afr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyu-afr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nyu-afr/Pods-nyu-afr.debug.xcconfig"; sourceTree = "<group>"; };
 		DBBE10562CCC80114D3AC6D3 /* libPods-nyu-afr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-nyu-afr.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,6 +190,8 @@
 				11C5FB9D1EAE8FCE00E97995 /* CheckViewController.h */,
 				11C5FB9E1EAE8FCE00E97995 /* CheckViewController.m */,
 				118265611E9ACAB500AC9491 /* Main.storyboard */,
+				C7F2C52C1EB6712F000C623E /* QuestTableViewController.h */,
+				C7F2C52D1EB6712F000C623E /* QuestTableViewController.m */,
 				C77FE24E1EB1084200314D33 /* TableViewController.h */,
 				C77FE24F1EB1084200314D33 /* TableViewController.m */,
 				C7900EEF1EB02DCD00EBD3A4 /* ShareViewController.h */,
@@ -194,6 +202,8 @@
 				C787A1571E9FD7EE00B9495C /* MenuViewController.m */,
 				C787A1591E9FD80900B9495C /* AcheivementsViewController.h */,
 				C787A15A1E9FD80900B9495C /* AcheivementsViewController.m */,
+				C7F2C5291EB65CE1000C623E /* CollectionViewCell.h */,
+				C7F2C52A1EB65CE1000C623E /* CollectionViewCell.m */,
 				C787A15C1E9FD82200B9495C /* ProfileViewController.h */,
 				C787A15D1E9FD82200B9495C /* ProfileViewController.m */,
 				C77FD9FC1EB3A8D600932482 /* EditProfileViewController.h */,
@@ -381,7 +391,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		0EB43B927D2D3959904360E2 /* [CP] Embed Pods Frameworks */ = {
@@ -411,7 +421,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		895E266C609EDE07EED916B2 /* [CP] Copy Pods Resources */ = {
@@ -469,9 +479,11 @@
 				11D77E1F1E9D9DBB00A37459 /* SignupViewController.m in Sources */,
 				C787A1581E9FD7EE00B9495C /* MenuViewController.m in Sources */,
 				C7900EF11EB02DCD00EBD3A4 /* ShareViewController.m in Sources */,
+				C7F2C52E1EB6712F000C623E /* QuestTableViewController.m in Sources */,
 				11D77E251E9DBB1D00A37459 /* QuestViewController.m in Sources */,
 				C7900EF51EB0E81D00EBD3A4 /* SharedData.m in Sources */,
 				11D77E221E9DB60F00A37459 /* MainTabBarController.m in Sources */,
+				C7F2C52B1EB65CE1000C623E /* CollectionViewCell.m in Sources */,
 				11F14C901E9E9048008C2B04 /* MapViewController.m in Sources */,
 				C77FD9FE1EB3A8D600932482 /* EditProfileViewController.m in Sources */,
 				118265601E9ACAB500AC9491 /* ViewController.m in Sources */,
