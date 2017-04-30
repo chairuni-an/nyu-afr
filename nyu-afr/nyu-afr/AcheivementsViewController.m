@@ -139,7 +139,7 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     if(_hasBadges == true){
-        _badgeCheck.text = @"Here are the badges you earned!";
+        _badgeCheck.text = @"";
         for (NSString *strComapre in _tempArray)
         {
             NSLog(@"%@",strComapre);
@@ -200,9 +200,20 @@
     //[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[_badgeURLArray objectAtIndex:indexPath.row]]]]
     cell.layer.borderWidth=1.0f;
     cell.layer.borderColor=[UIColor purpleColor].CGColor;
-    cell.badgeDisplay.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[_badgeURLArray objectAtIndex:indexPath.row]]]];
+    //cell.badgeDisplay.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[_badgeURLArray objectAtIndex:indexPath.row]]]];
     cell.level.text = [_badgeLevelArray objectAtIndex:indexPath.row];
     cell.typeDisplay.text = [_typeArray objectAtIndex:indexPath.row];
+    
+    dispatch_async(dispatch_get_global_queue(0,0), ^{
+        NSData * data = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: [_badgeURLArray objectAtIndex:indexPath.row]]];
+        if ( data == nil )
+            return;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            cell.badgeDisplay.image = [UIImage imageWithData: data];
+        });
+        
+    });
     
     
     return cell;
