@@ -7,6 +7,7 @@
 //
 
 #import "QuestTableViewController.h"
+#import "QuestTableViewCell.h"
 @import Firebase;
 @interface QuestTableViewController ()
 @property (strong, nonatomic) FIRDatabaseReference *ref;
@@ -16,6 +17,10 @@
 @property (strong, nonatomic) NSDictionary *questsDatabase;
 @property (strong, nonatomic) NSMutableArray *tableDataArray;
 @property (strong, nonatomic) NSMutableArray *questNameArray;
+@property (strong, nonatomic) NSMutableArray *questURLArray;
+@property (strong, nonatomic) NSMutableArray *timeStampArray;
+@property (strong, nonatomic) NSMutableArray *formattedDateArray;
+
 
 @property (strong, nonatomic) NSMutableArray *questCategoryArray;
 @end
@@ -26,7 +31,10 @@
     [super viewDidLoad];
     _tableDataArray =  [[NSMutableArray alloc] init];
     _questNameArray =  [[NSMutableArray alloc] init];
+    _questURLArray =  [[NSMutableArray alloc] init];
     _questCategoryArray =  [[NSMutableArray alloc] init];
+    _timeStampArray=  [[NSMutableArray alloc] init];
+    _formattedDateArray=  [[NSMutableArray alloc] init];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -51,18 +59,37 @@
   
                 _questsCompleted = [_achievements objectForKey:key];
                 
+                
             }
             
         }
 
         for(NSString *key in _questsCompleted){
-                [_tableDataArray addObject: key];
+            [_tableDataArray addObject: key];
+            [_questURLArray addObject:[[_questsCompleted objectForKey:key] objectForKey:@"selfie_url"]];
+            [_timeStampArray addObject:[[_questsCompleted objectForKey:key] objectForKey:@"timestamp"]];
                 
             }
-            
-
         
-        NSLog(@"%@", _tableDataArray);
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        for(NSString *time in _timeStampArray){
+            double timeDouble = [time doubleValue];
+            NSTimeInterval timeInterval=timeDouble/1000;
+            NSDate *date = [NSDate dateWithTimeIntervalSince1970:timeInterval];
+            [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+            [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+            NSString *formattedDateString = [dateFormatter stringFromDate:date];
+            [_formattedDateArray addObject: formattedDateString];
+        }
+       
+ 
+        //NSDate *date = [NSDate dateWithTimeIntervalSinceReferenceDate:162000];
+        
+        
+        
+        NSLog(@"%@", _formattedDateArray);
+        NSLog(@"%@", _questURLArray);
+        
         
         
         
@@ -122,14 +149,18 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *simpleTableIdentifier = @"SimpleTableItem";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    static NSString *cellIdentifier = @"Cell";
+    QuestTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
 
-    cell.textLabel.text = [_questNameArray objectAtIndex:indexPath.row];
+    cell.questName.text = [_questNameArray objectAtIndex:indexPath.row];
+    cell.date.text = [_formattedDateArray objectAtIndex:indexPath.row];
+    cell.questNumber.text = [NSString stringWithFormat:@"Quest# %ld -", (long)indexPath.row + 1];
+    cell.selfieImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[_questURLArray objectAtIndex:indexPath.row]]]];
+    
     return cell;
 }
 
