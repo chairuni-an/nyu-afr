@@ -43,6 +43,7 @@
 		C7F2C52B1EB65CE1000C623E /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F2C52A1EB65CE1000C623E /* CollectionViewCell.m */; };
 		C7F2C52E1EB6712F000C623E /* QuestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F2C52D1EB6712F000C623E /* QuestTableViewController.m */; };
 		C7F6E7A41EB67D5700F327F8 /* QuestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F6E7A31EB67D5700F327F8 /* QuestTableViewCell.m */; };
+		C7F6E7A61EB6A6D900F327F8 /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = C7F6E7A51EB6A6D900F327F8 /* AppIcon.appiconset */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,7 @@
 		C7F2C52D1EB6712F000C623E /* QuestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestTableViewController.m; sourceTree = "<group>"; };
 		C7F6E7A21EB67D5700F327F8 /* QuestTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestTableViewCell.h; sourceTree = "<group>"; };
 		C7F6E7A31EB67D5700F327F8 /* QuestTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestTableViewCell.m; sourceTree = "<group>"; };
+		C7F6E7A51EB6A6D900F327F8 /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcon.appiconset; sourceTree = "<group>"; };
 		CB78F2E28D1984777076E879 /* Pods-nyu-afrTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyu-afrTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-nyu-afrTests/Pods-nyu-afrTests.release.xcconfig"; sourceTree = "<group>"; };
 		CD2937EB9C26C54CF66D5DE5 /* Pods-nyu-afr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyu-afr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nyu-afr/Pods-nyu-afr.debug.xcconfig"; sourceTree = "<group>"; };
 		DBBE10562CCC80114D3AC6D3 /* libPods-nyu-afr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-nyu-afr.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -218,6 +220,7 @@
 				11C5FB9A1EAD2C3E00E97995 /* QuestModel.h */,
 				11C5FB9B1EAD2C3E00E97995 /* QuestModel.m */,
 				118265641E9ACAB500AC9491 /* Assets.xcassets */,
+				C7F6E7A51EB6A6D900F327F8 /* AppIcon.appiconset */,
 				C787A15F1EA2D21000B9495C /* imageplaceholder.png */,
 				1182657D1E9AD21700AC9491 /* NYUAFR2.png */,
 				118265661E9ACAB500AC9491 /* LaunchScreen.storyboard */,
@@ -364,6 +367,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7F6E7A61EB6A6D900F327F8 /* AppIcon.appiconset in Resources */,
 				118265681E9ACAB500AC9491 /* LaunchScreen.storyboard in Resources */,
 				1182657E1E9AD21700AC9491 /* NYUAFR2.png in Resources */,
 				11D77E161E9D931E00A37459 /* GoogleService-Info.plist in Resources */,
