@@ -42,6 +42,7 @@
 		C7A1E59A1EB006C7005255B3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7A1E5991EB006C7005255B3 /* Default-568h@2x.png */; };
 		C7F2C52B1EB65CE1000C623E /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F2C52A1EB65CE1000C623E /* CollectionViewCell.m */; };
 		C7F2C52E1EB6712F000C623E /* QuestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F2C52D1EB6712F000C623E /* QuestTableViewController.m */; };
+		C7F6E7A41EB67D5700F327F8 /* QuestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F6E7A31EB67D5700F327F8 /* QuestTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,8 @@
 		C7F2C52A1EB65CE1000C623E /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		C7F2C52C1EB6712F000C623E /* QuestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestTableViewController.h; sourceTree = "<group>"; };
 		C7F2C52D1EB6712F000C623E /* QuestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestTableViewController.m; sourceTree = "<group>"; };
+		C7F6E7A21EB67D5700F327F8 /* QuestTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestTableViewCell.h; sourceTree = "<group>"; };
+		C7F6E7A31EB67D5700F327F8 /* QuestTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestTableViewCell.m; sourceTree = "<group>"; };
 		CB78F2E28D1984777076E879 /* Pods-nyu-afrTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyu-afrTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-nyu-afrTests/Pods-nyu-afrTests.release.xcconfig"; sourceTree = "<group>"; };
 		CD2937EB9C26C54CF66D5DE5 /* Pods-nyu-afr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nyu-afr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nyu-afr/Pods-nyu-afr.debug.xcconfig"; sourceTree = "<group>"; };
 		DBBE10562CCC80114D3AC6D3 /* libPods-nyu-afr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-nyu-afr.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,6 +193,8 @@
 				11C5FB9D1EAE8FCE00E97995 /* CheckViewController.h */,
 				11C5FB9E1EAE8FCE00E97995 /* CheckViewController.m */,
 				118265611E9ACAB500AC9491 /* Main.storyboard */,
+				C7F6E7A21EB67D5700F327F8 /* QuestTableViewCell.h */,
+				C7F6E7A31EB67D5700F327F8 /* QuestTableViewCell.m */,
 				C7F2C52C1EB6712F000C623E /* QuestTableViewController.h */,
 				C7F2C52D1EB6712F000C623E /* QuestTableViewController.m */,
 				C77FE24E1EB1084200314D33 /* TableViewController.h */,
@@ -482,6 +487,7 @@
 				C7F2C52E1EB6712F000C623E /* QuestTableViewController.m in Sources */,
 				11D77E251E9DBB1D00A37459 /* QuestViewController.m in Sources */,
 				C7900EF51EB0E81D00EBD3A4 /* SharedData.m in Sources */,
+				C7F6E7A41EB67D5700F327F8 /* QuestTableViewCell.m in Sources */,
 				11D77E221E9DB60F00A37459 /* MainTabBarController.m in Sources */,
 				C7F2C52B1EB65CE1000C623E /* CollectionViewCell.m in Sources */,
 				11F14C901E9E9048008C2B04 /* MapViewController.m in Sources */,
