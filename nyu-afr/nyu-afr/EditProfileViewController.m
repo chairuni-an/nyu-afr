@@ -35,11 +35,11 @@
         if ([UIImage imageWithData: imageData] != nil) {
             self.profileImage.image = [UIImage imageWithData: imageData];
         } else {
-            UIImage *image = [UIImage imageNamed: @"imageplaceholder.png"];
+            UIImage *image = [UIImage imageNamed: @"profpict-60"];
             [self.profileImage setImage:image];
         }
     } else {
-        UIImage *image = [UIImage imageNamed: @"imageplaceholder.png"];
+        UIImage *image = [UIImage imageNamed: @"profpict-60"];
         [self.profileImage setImage:image];
     }
     if ([delegate.userModel.userData objectForKey:@"display_name"] != nil) {
@@ -199,5 +199,35 @@
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
     return [emailTest evaluateWithObject:self.emailAddressField.text];
 }
+
+- (IBAction)logout:(id)sender {
+    UIAlertController* alert = [UIAlertController
+                                alertControllerWithTitle:@"Log out"
+                                message:@"Are you sure that you want to log out?"
+                                preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* yesAction = [UIAlertAction actionWithTitle:@"YES" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {[self performLogout];}];
+    UIAlertAction* noAction = [UIAlertAction actionWithTitle:@"NO" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
+    [alert addAction:yesAction];
+    [alert addAction:noAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)performLogout {
+    NSError *signOutError;
+    BOOL status = [[FIRAuth auth] signOut:&signOutError];
+    if (!status) {
+        NSLog(@"Error signing out: %@", signOutError);
+        return;
+    }else{
+        UIAlertController* alert = [UIAlertController
+                                    alertControllerWithTitle:@"Log out"
+                                    message:@"You are logged out"
+                                    preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* okayAction = [UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) { [self performSegueWithIdentifier:@"goToLogin" sender:self]; }];
+        [alert addAction:okayAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+}
+
 
 @end

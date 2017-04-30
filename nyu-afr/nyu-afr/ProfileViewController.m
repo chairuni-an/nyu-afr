@@ -56,11 +56,11 @@
         if ([UIImage imageWithData: imageData] != nil) {
             self.profileImage.image = [UIImage imageWithData: imageData];
         } else {
-            UIImage *image = [UIImage imageNamed: @"imageplaceholder.png"];
+            UIImage *image = [UIImage imageNamed: @"profpict-100"];
             [self.profileImage setImage:image];
         }
     } else {
-        UIImage *image = [UIImage imageNamed: @"imageplaceholder.png"];
+        UIImage *image = [UIImage imageNamed: @"profpict-100"];
         [self.profileImage setImage:image];
     }
     
