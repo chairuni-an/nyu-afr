@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordTF;
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
 @property (weak, nonatomic) IBOutlet UILabel *errorLabel;
+@property (nonatomic) UITapGestureRecognizer *tapRecognizer;
 
 @end
 
@@ -26,6 +27,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.errorLabel.text = @"";
+    _tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
+    _tapRecognizer.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer:_tapRecognizer];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,6 +59,11 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UITabBarController *vc = (MainTabBarController *) [storyboard instantiateViewControllerWithIdentifier:@"MainTabBarController"];
     [self presentViewController:vc animated:YES completion:nil];
+}
+
+- (void)handleSingleTap:(UITapGestureRecognizer *) sender
+{
+    [self.view endEditing:YES];
 }
 
 - (void)login {
