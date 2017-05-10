@@ -247,10 +247,10 @@
             </objects>
             <point key="canvasLocation" x="2482" y="258"/>
         </scene>
-        <!--ShareViewController-->
+        <!--Share Achievements-->
         <scene sceneID="juK-JO-gvA">
             <objects>
-                <viewController title="ShareViewController" id="VLR-tx-1WK" customClass="ShareViewController" sceneMemberID="viewController">
+                <viewController title="Share Achievements" id="VLR-tx-1WK" customClass="ShareViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5NU-8H-udL"/>
                         <viewControllerLayoutGuide type="bottom" id="Aeg-Uw-e5v"/>
