@@ -98,13 +98,9 @@
                                                     metadata:myMetadata
                                                   completion:^(FIRStorageMetadata *metadata,
                                                                NSError *error) {
-                                                      if (error != nil) {
-                                                          // Uh-oh, an error occurred!
-
-                                                      } else {
-                                                          // Metadata contains file metadata such as size, content-type, and download URL.
+                                                      if (!error) {
                                                           self.pictureDownloadURL = metadata.downloadURL;
-                                                          NSLog(@"%@", self.pictureDownloadURL);
+                                                          // continue by uploading the whole data
                                                           [self uploadData];
                                                           
                                                       }
