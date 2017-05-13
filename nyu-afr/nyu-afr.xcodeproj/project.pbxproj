@@ -16,10 +16,8 @@
 		118265731E9ACAB500AC9491 /* nyu_afrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 118265721E9ACAB500AC9491 /* nyu_afrTests.m */; };
 		1182657E1E9AD21700AC9491 /* NYUAFR2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1182657D1E9AD21700AC9491 /* NYUAFR2.png */; };
 		11C5FB991EAA754D00E97995 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5FB981EAA754D00E97995 /* UserModel.m */; };
-		11C5FB9C1EAD2C3E00E97995 /* QuestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5FB9B1EAD2C3E00E97995 /* QuestModel.m */; };
 		11C5FB9F1EAE8FCE00E97995 /* CheckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C5FB9E1EAE8FCE00E97995 /* CheckViewController.m */; };
 		11D77E161E9D931E00A37459 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11D77E151E9D931E00A37459 /* GoogleService-Info.plist */; };
-		11D77E191E9D99F900A37459 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D77E181E9D99F900A37459 /* Model.m */; };
 		11D77E1C1E9D9DA700A37459 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D77E1B1E9D9DA700A37459 /* LoginViewController.m */; };
 		11D77E1F1E9D9DBB00A37459 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D77E1E1E9D9DBB00A37459 /* SignupViewController.m */; };
 		11D77E221E9DB60F00A37459 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D77E211E9DB60F00A37459 /* MainTabBarController.m */; };
@@ -74,13 +72,9 @@
 		11C5FB931EA7FFDC00E97995 /* SquareParkLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SquareParkLocation.gpx; sourceTree = "<group>"; };
 		11C5FB971EAA754D00E97995 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		11C5FB981EAA754D00E97995 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
-		11C5FB9A1EAD2C3E00E97995 /* QuestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestModel.h; sourceTree = "<group>"; };
-		11C5FB9B1EAD2C3E00E97995 /* QuestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestModel.m; sourceTree = "<group>"; };
 		11C5FB9D1EAE8FCE00E97995 /* CheckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckViewController.h; sourceTree = "<group>"; };
 		11C5FB9E1EAE8FCE00E97995 /* CheckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckViewController.m; sourceTree = "<group>"; };
 		11D77E151E9D931E00A37459 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		11D77E171E9D99F900A37459 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
-		11D77E181E9D99F900A37459 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
 		11D77E1A1E9D9DA700A37459 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		11D77E1B1E9D9DA700A37459 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		11D77E1D1E9D9DBB00A37459 /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
@@ -178,8 +172,6 @@
 				C7900EF21EB0449F00EBD3A4 /* nyu-afr.entitlements */,
 				1182655B1E9ACAB500AC9491 /* AppDelegate.h */,
 				1182655C1E9ACAB500AC9491 /* AppDelegate.m */,
-				11D77E171E9D99F900A37459 /* Model.h */,
-				11D77E181E9D99F900A37459 /* Model.m */,
 				1182655E1E9ACAB500AC9491 /* ViewController.h */,
 				1182655F1E9ACAB500AC9491 /* ViewController.m */,
 				11D77E1A1E9D9DA700A37459 /* LoginViewController.h */,
@@ -194,17 +186,14 @@
 				11F14C8F1E9E9048008C2B04 /* MapViewController.m */,
 				11C5FB9D1EAE8FCE00E97995 /* CheckViewController.h */,
 				11C5FB9E1EAE8FCE00E97995 /* CheckViewController.m */,
-				118265611E9ACAB500AC9491 /* Main.storyboard */,
-				C7F6E7A21EB67D5700F327F8 /* QuestTableViewCell.h */,
 				C7F6E7A31EB67D5700F327F8 /* QuestTableViewCell.m */,
 				C7F2C52C1EB6712F000C623E /* QuestTableViewController.h */,
 				C7F2C52D1EB6712F000C623E /* QuestTableViewController.m */,
 				C77FE24E1EB1084200314D33 /* TableViewController.h */,
+				C7F6E7A21EB67D5700F327F8 /* QuestTableViewCell.h */,
 				C77FE24F1EB1084200314D33 /* TableViewController.m */,
 				C7900EEF1EB02DCD00EBD3A4 /* ShareViewController.h */,
 				C7900EF01EB02DCD00EBD3A4 /* ShareViewController.m */,
-				C7900EF31EB0E81D00EBD3A4 /* SharedData.h */,
-				C7900EF41EB0E81D00EBD3A4 /* SharedData.m */,
 				C787A1561E9FD7EE00B9495C /* MenuViewController.h */,
 				C787A1571E9FD7EE00B9495C /* MenuViewController.m */,
 				C787A1591E9FD80900B9495C /* AcheivementsViewController.h */,
@@ -217,12 +206,13 @@
 				C77FD9FD1EB3A8D600932482 /* EditProfileViewController.m */,
 				11C5FB971EAA754D00E97995 /* UserModel.h */,
 				11C5FB981EAA754D00E97995 /* UserModel.m */,
-				11C5FB9A1EAD2C3E00E97995 /* QuestModel.h */,
-				11C5FB9B1EAD2C3E00E97995 /* QuestModel.m */,
+				C7900EF31EB0E81D00EBD3A4 /* SharedData.h */,
+				C7900EF41EB0E81D00EBD3A4 /* SharedData.m */,
+				118265611E9ACAB500AC9491 /* Main.storyboard */,
 				118265641E9ACAB500AC9491 /* Assets.xcassets */,
-				C7F6E7A51EB6A6D900F327F8 /* AppIcon.appiconset */,
 				C787A15F1EA2D21000B9495C /* imageplaceholder.png */,
 				1182657D1E9AD21700AC9491 /* NYUAFR2.png */,
+				C7F6E7A51EB6A6D900F327F8 /* AppIcon.appiconset */,
 				118265661E9ACAB500AC9491 /* LaunchScreen.storyboard */,
 				118265691E9ACAB500AC9491 /* Info.plist */,
 				11D77E151E9D931E00A37459 /* GoogleService-Info.plist */,
@@ -499,9 +489,7 @@
 				118265601E9ACAB500AC9491 /* ViewController.m in Sources */,
 				1182655D1E9ACAB500AC9491 /* AppDelegate.m in Sources */,
 				1182655A1E9ACAB500AC9491 /* main.m in Sources */,
-				11C5FB9C1EAD2C3E00E97995 /* QuestModel.m in Sources */,
 				11C5FB991EAA754D00E97995 /* UserModel.m in Sources */,
-				11D77E191E9D99F900A37459 /* Model.m in Sources */,
 				C77FE2501EB1084200314D33 /* TableViewController.m in Sources */,
 				C787A15E1E9FD82200B9495C /* ProfileViewController.m in Sources */,
 				C787A15B1E9FD80900B9495C /* AcheivementsViewController.m in Sources */,
