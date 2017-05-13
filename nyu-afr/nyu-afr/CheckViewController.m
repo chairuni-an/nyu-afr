@@ -12,13 +12,9 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKShareKit/FBSDKShareKit.h>
 #import "SharedData.h"
-// #import <ImageIO/ImageIO.h>
-
-
-//#import <CoreGraphics/CGImageSource.h>
-
 
 @interface CheckViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+
 @property (weak, nonatomic) IBOutlet UIImageView *myImageView;
 @property (weak, nonatomic) IBOutlet UILabel *placenameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *choosePlacenameButton;
@@ -27,6 +23,7 @@
 @property (nonatomic) NSString *placeID;
 @property (nonatomic) NSString *placename;
 @property (nonatomic) BOOL isImageChosen;
+
 @end
 
 @implementation CheckViewController
@@ -283,7 +280,7 @@
     
     [self dismissViewControllerAnimated:YES completion:nil];
     SharedData *data = [SharedData sharedInstance];
-    UIImage * img = [info valueForKey:UIImagePickerControllerOriginalImage]; // you can change it to edited image
+    UIImage * img = [info valueForKey:UIImagePickerControllerOriginalImage];
     [data setShareImage:[self scaleImage:img toSize:CGSizeMake(640, 640)]];
     self.myImageView.image = [data shareImage];
 }
