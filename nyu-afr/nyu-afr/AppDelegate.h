@@ -18,6 +18,5 @@
 @property (strong, nonatomic) FIRDatabaseReference *ref;
 @property (strong, nonatomic) FIRStorage *storage;
 
-
 @end
 

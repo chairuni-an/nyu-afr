@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface QuestTableViewCell : UITableViewCell
+
 @property (strong, nonatomic) IBOutlet UIImageView *selfieImage;
 @property (strong, nonatomic) IBOutlet UILabel *questName;
 @property (strong, nonatomic) IBOutlet UILabel *date;

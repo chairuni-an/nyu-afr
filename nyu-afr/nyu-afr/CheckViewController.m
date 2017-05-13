@@ -8,10 +8,10 @@
 
 #import "CheckViewController.h"
 #import "AppDelegate.h"
-@import FirebaseStorage;
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKShareKit/FBSDKShareKit.h>
 #import "SharedData.h"
+@import FirebaseStorage;
 
 @interface CheckViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
@@ -33,13 +33,12 @@
     [self.navigationItem setHidesBackButton:YES];
     [self.myImageView setImage:[UIImage imageNamed:@"placeholder"]];
     self.isImageChosen = false;
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
+
 - (IBAction)browsePhotoFromLibrary:(id)sender {
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
         UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
@@ -50,8 +49,7 @@
     }
 }
 
-- (IBAction)takePhoto:(id)sender
-{
+- (IBAction)takePhoto:(id)sender {
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         UIImagePickerController *picker = [[UIImagePickerController alloc] init];
         picker.delegate = self;
@@ -63,14 +61,10 @@
                          completion:^ {
                              [picker takePicture];
                          }];
-        
     }
-
 }
 
 - (IBAction)submitButtonPressed:(id)sender {
-    // dummy to fill the placeID and placename
-    // it should be filled after choosing the placename from the tableview
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     SharedData *data =[SharedData sharedInstance];
 
@@ -79,7 +73,7 @@
     
     if (self.isImageChosen && self.placeID != nil && self.placename != nil) {
         [self submitAnswer];
-    }else{
+    } else {
         UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Oops!"
                                                                        message:@"Please also add a photo of proof before you submit your answer!"
                                                                 preferredStyle:UIAlertControllerStyleAlert];
@@ -320,15 +314,5 @@
     return smallImage;
     
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
