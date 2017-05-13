@@ -15,7 +15,6 @@
 
 @property (strong, nonatomic) IBOutlet UIImageView *imageTest;
 
-
 @end
 
 @implementation ShareViewController
@@ -23,11 +22,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIButton *myLoginButton=[UIButton buttonWithType:UIButtonTypeCustom];
-    myLoginButton.backgroundColor=[UIColor purpleColor];
-    myLoginButton.frame=CGRectMake(0,0,180,40);
+    UIButton *myLoginButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    myLoginButton.backgroundColor = [UIColor purpleColor];
+    myLoginButton.frame = CGRectMake(0, 0, 180, 40);
     myLoginButton.center = self.view.center;
-    [myLoginButton setTitle: @"Share to Facebook!" forState: UIControlStateNormal];
+    [myLoginButton setTitle:@"Share to Facebook!" forState:UIControlStateNormal];
     
     // Handle clicks on the button
     [myLoginButton
@@ -41,25 +40,22 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
--(void)loginButtonClicked
-{
+- (void)loginButtonClicked {
     FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
-    SharedData *data =[SharedData sharedInstance];
+    SharedData *data = [SharedData sharedInstance];
     [login logOut];  
     [login
-     logInWithReadPermissions: @[@"public_profile"]
+     logInWithReadPermissions:@[@"public_profile"]
      fromViewController:self
      handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
          if (error) {
-             NSLog(@"Process error");
+             // "Process error"
          } else if (result.isCancelled) {
-             NSLog(@"Cancelled");
+             // "Cancelled"
          } else {
-             NSLog(@"Logged in");
-
+             // Logged in"
              FBSDKSharePhoto *photo = [[FBSDKSharePhoto alloc] init];
              photo.image =[data shareImage];
              photo.userGenerated = YES;
@@ -68,21 +64,8 @@
              [FBSDKShareDialog showFromViewController:self
                                           withContent:content
                                              delegate:nil];
-      
          }
      }];
 }
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 
 @end
